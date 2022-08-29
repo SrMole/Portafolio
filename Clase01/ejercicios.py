@@ -4,7 +4,7 @@
 def mensaje(msg:str,nom:str)->str:
     return f"{msg} {nom}"
 
-A=str(input("Dame un mensajeeeee: "))
+A=str(input("Dame un mensaje: "))
 b=str(input("Dame tu nombre: "))
 mensaje(A,b)
 
