@@ -13,7 +13,7 @@ if __name__=="__main__":
 import sumar as s
 import restar as r
 import division as d
-import multiplicar as m
+import multiplicaaar as m
 import cuadrado as c
 
 
