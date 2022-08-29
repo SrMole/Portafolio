@@ -58,6 +58,3 @@ def suma2(a:int,b:int)->int:
 
 print(suma1(2,5))
 print(suma2(3.2,3))
-
-
-#%%
