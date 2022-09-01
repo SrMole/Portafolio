@@ -72,4 +72,5 @@ ancho = 15
 print(f"{e[0]:^{ancho}}{e[1]:^{ancho}}{e[2]:^{ancho}}{e[3]:^{ancho}}")
 for i in range(len(ALumnos)):
     print(f"{ALumnos[i]:<{ancho}}{m_e_d[i]:^{ancho}}{m_p_f[i]:^{ancho}}{m_i[i]:^{ancho}}")
+    
 # %%
