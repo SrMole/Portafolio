@@ -4,6 +4,6 @@
 ---
 ##  Ingeniería en Computación Inteligente
 ---
-### Materia: Programación Funcional
-### Estudiante: Manzano Morales Jesús Emilio
-### Profesor: Dr. Walter Alexander Mata López
+#### Materia: Programación Funcional
+#### Estudiante: Manzano Morales Jesús Emilio
+#### Profesor: Dr. Walter Alexander Mata López
