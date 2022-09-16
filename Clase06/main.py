@@ -1,11 +1,5 @@
+# funciones sin argumentos 
 
-
-#instala todo esto pendejo
-#pip install streamlit
-#pip install pyttsx3
-#as es un alias
-
-#tkinter importa 
 #%%
 
 def suma(a,b):
