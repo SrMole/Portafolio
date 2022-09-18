@@ -34,7 +34,7 @@ if __name__=="__main__":
     print(mensaje2("Emilio",19))
 ```
 #### 2.4 Salida:
-```python
+```
 Hola Emilio tienes 19 años
 ```
 ---
@@ -55,7 +55,7 @@ if __name__=="__main__":
     print(mensaje2("Emilio",edad(2022,2003)))
 ```
 #### 3.4 Salida:
-```python
+```
 Hola Emilio, tienes 19 años
 ```
 ---
@@ -73,7 +73,7 @@ if __name__=="__main__":
     print(mensaje("Emilio",2022,2003))
 ```
 #### 4.4 Salida:
-```python
+```
 Hola Emilio tienes 19 años
 ```
 ---
@@ -92,7 +92,7 @@ if __name__=="__main__":
     print(tabla(10,4,2))
 ```
 #### 6.4 Salida:
-```python
+```
     1      x     2      =     2     
     2      x     2      =     4     
     3      x     2      =     6     
@@ -121,7 +121,7 @@ if __name__=="__main__":
     print(tablas(3,5,10))
 ```
 #### 7.4 Salida:
-```python
+```
     1     x    1     =    1     
     1     x    2     =    2     
     1     x    3     =    3     
@@ -154,7 +154,7 @@ if __name__=="__main__":
     print(lista_nat)
 ```
 #### 8.4 Salida:
-```python
+```
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 ---
@@ -173,7 +173,7 @@ if __name__=="__main__":
     print(lista1)
 ```
 #### 9.4 Salida:
-```python
+```
 [0, 1, 2, 3, 4, 5, 6, 7]
 ```
 ---
