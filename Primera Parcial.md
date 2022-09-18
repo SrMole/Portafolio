@@ -3,5 +3,6 @@
 ## Ejercicios resueltos en clase
 ---
 ### Ejercicio 1.
-#### Descripción del ejercicio
+#### Descripción del ejercicio:
+
 
