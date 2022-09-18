@@ -4,7 +4,7 @@
 ---
 ### Ejercicio 1.
 #### Descripción del ejercicio:
-Escribir una función que reciba un mensaje y un nombre y escriba en pantalla <mensaje><nombre>
+Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "mensaje-nombre"
 #### Código
 
 
