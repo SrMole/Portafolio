@@ -1,7 +1,7 @@
 
 # ***Ejercicios resueltos en clase***
 ---
-### *Ejercicio 1*
+## *Ejercicio 1*
 #### 1.1 Descripción del ejercicio:
 Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "'mensaje' 'nombre'".
 #### 1.2 Código:
