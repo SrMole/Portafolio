@@ -55,3 +55,23 @@ mensaje2("Emilio",edad(2022,2003))
 ```python
 'Hola Emilio tienes 19 años'
 ```
+---
+### Ejercicio 4.
+#### Descripción del ejercicio:
+Hacer una funcion que reciba el nombre de un persona el año de nacimiento y el año actual retornando el mensaje "Hola 'nombre', tienes 'edad' años"
+#### Código:
+```python
+def mensaje(nom:str,act:int,naci:int)->int|str:
+    return f"Hola {nom}, tienes {act-naci} años"
+```
+#### Entrada:
+```python
+mensaje("Emilio",2022,2003))
+```
+#### Salida:
+```python
+'Hola Emilio, tienes 19 años'
+```
+---
+### Ejercicio 5.
+#### Descripción del ejercicio:
