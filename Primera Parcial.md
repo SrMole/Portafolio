@@ -17,7 +17,7 @@ if __name__=="__main__":
 ```
 #### 1.4 Salida:
 ```python
-'Hola Emilio'
+Hola Emilio
 ```
 ---
 ### Ejercicio 2
@@ -35,7 +35,7 @@ if __name__=="__main__":
 ```
 #### 2.4 Salida:
 ```python
-'Hola Emilio tienes 19 años'
+Hola Emilio tienes 19 años
 ```
 ---
 ### Ejercicio 3
@@ -56,7 +56,7 @@ if __name__=="__main__":
 ```
 #### 3.4 Salida:
 ```python
-'Hola Emilio, tienes 19 años'
+Hola Emilio, tienes 19 años
 ```
 ---
 ### Ejercicio 4
@@ -74,7 +74,7 @@ if __name__=="__main__":
 ```
 #### 4.4 Salida:
 ```python
-'Hola Emilio tienes 19 años'
+Hola Emilio tienes 19 años
 ```
 ---
 ### Ejercicio 6
