@@ -84,12 +84,12 @@ Hacer una función que genere una tabla de multiplicar recibiendo como argumento
 ```python
 def tabla(an:int,can:int,tab:int)->int:
     for a in range(1,can+1):
-        print(f"{a:^{an}} x {tab:^{an}} = {a*tab:^{an}}") 
+        print(f"{a:^{an}} x {tab:^{an}} = {a*tab:^{an}}")
 ```
 #### 6.3 Implementación:
 ```python
 if __name__=="__main__":
-    print(tabla(10,4,2))
+    tabla(10,4,2)
 ```
 #### 6.4 Salida:
 ```
@@ -118,7 +118,7 @@ def tabla1(n:int,t:int,fmt:int)->int:
 #### 7.3 Implementación:
 ```python
 if __name__=="__main__":
-    print(tablas(3,5,10))
+    tablas(3,5,10)
 ```
 #### 7.4 Salida:
 ```
