@@ -132,5 +132,6 @@ tablas(3,5,10)
     3     x    4     =    12    
     3     x    5     =    15     
 ```
+---
 ### Ejercicio 7.
 #### Descripción del ejercicio:
