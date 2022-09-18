@@ -6,9 +6,9 @@
 #### Descripción del ejercicio:
 Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "mensaje-nombre"
 #### Código:
-´´´python
+```python
 def mensaje(msg:str,nom:str)->str:
     return f"{msg} {nom}"
-´´´
+```
 
 
