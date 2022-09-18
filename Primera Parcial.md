@@ -29,11 +29,11 @@ def mensaje2(nom:str,edad:int)->str|int:
 ```
 #### Entrada:
 ```python
-mensaje2("Emilio",18)
+mensaje2("Emilio",19)
 ```
 #### Salida:
 ```python
-'Hola Emilio tienes 18 años'
+'Hola Emilio tienes 19 años'
 ```
 ---
 ### Ejercicio 3.
