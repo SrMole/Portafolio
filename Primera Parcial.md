@@ -135,3 +135,19 @@ tablas(3,5,10)
 ---
 ### Ejercicio 7.
 #### Descripción del ejercicio:
+Rellenar una lista con los números naturales del 1 al 10
+### Código:
+```python
+lista_nat = []
+for i in range(1,11):
+    lista_nat.append(i)
+```
+#### Entrada:
+```python
+print(lista_nat)
+```
+#### Salida:
+```python
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+---
