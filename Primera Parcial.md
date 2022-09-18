@@ -77,6 +77,36 @@ if __name__=="__main__":
 Hola Emilio tienes 19 años
 ```
 ---
+### Ejercicio 5
+#### 5.1 Descripción del ejercicio:
+Hacer una función que imprima un reporte dadas cuatro listas (nombres,materias,calificaciones), recibiendo como argumento el ancho
+#### 5.2 Código:
+```python
+e = ["Nombre", "Est Dat", "Prog Func", "Ingles"]
+ALumnos = ["Hugo", "Paco", "Luis", "Lupita"]
+m_e_d = [9.45,10,8.32,10]
+m_p_f = [8.89,8,8.5,7.5]
+m_i = [7.23,9,9.86,10]
+
+def reporte(an:int)->int:
+    print(f"{e[0]:^{an}}{e[1]:^{an}}{e[2]:^{an}}{e[3]:^{an}}")
+    for i in range(len(ALumnos)):
+        print(f"{ALumnos[i]:<{an}}{m_e_d[i]:^{an}}{m_p_f[i]:^{an}}{m_i[i]:^{an}}")
+```
+#### 5.3 Implementación:
+```python
+if __name__=="__main__":
+    reporte(15)
+```
+#### 5.4 Salida:
+```
+    Nombre         Est Dat       Prog Func       Ingles     
+Hugo                9.45           8.89           7.23      
+Paco                 10              8              9       
+Luis                8.32            8.5           9.86      
+Lupita               10             7.5            10   
+```
+---
 ### Ejercicio 6
 #### 6.1 Descripción del ejercicio:
 Hacer una función que genere una tabla de multiplicar recibiendo como argumento el ancho, la cantidad de números y el número a multiplicar
