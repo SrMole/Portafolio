@@ -61,7 +61,7 @@ Hola Emilio, tienes 19 años
 ---
 ### Ejercicio 4
 #### 4.1 Descripción del ejercicio:
-Hacer una funcion que reciba el nombre de un persona el año de nacimiento y el año actual retornando el mensaje "Hola 'nombre' tienes 'edad' años"
+Hacer una función que reciba el nombre de una persona, el año de nacimiento y el año actual retornando el mensaje "Hola 'nombre' tienes 'edad' años"
 #### 4.2 Código:
 ```python
 def mensaje(nom:str,act:int,naci:int)->int|str:
