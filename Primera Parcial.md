@@ -4,7 +4,7 @@
 ---
 ### Ejercicio 1
 #### 1.1 Descripción del ejercicio:
-Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "mensaje-nombre"
+Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "mensaje-nombre".
 #### 1.2 Código:
 ```python
 def mensaje(msg:str,nom:str)->str:
@@ -22,7 +22,7 @@ Hola Emilio
 ---
 ### Ejercicio 2
 #### 2.1 Descripción del ejercicio:
-Escribir una función que reciba el nombre y la edad de una persona. El mensaje de salida tiene que ser: "Hola 'nombre' tienes 'edad' años"
+Escribir una función que reciba el nombre y la edad de una persona. El mensaje de salida tiene que ser: "Hola 'nombre' tienes 'edad' años".
 #### 2.2 Código:
 ```python
 def mensaje2(nom:str,edad:int)->str|int:
@@ -40,7 +40,7 @@ Hola Emilio tienes 19 años
 ---
 ### Ejercicio 3
 #### 3.1 Descripción del ejercicio:
-Escribir una función que reciba el año actual y el año de nacimineto, usando la funcion anterior envia esta como argumento y obtenga el mensaje: "Hola 'nombre', tienes 'edad' años"
+Escribir una función que reciba el año actual y el año de nacimineto, usando la funcion anterior envia esta como argumento y obtenga el mensaje: "Hola 'nombre', tienes 'edad' años".
 #### 3.2 Código:
 ```python
 def edad(act:int,naci:int)->int:
@@ -61,7 +61,7 @@ Hola Emilio, tienes 19 años
 ---
 ### Ejercicio 4
 #### 4.1 Descripción del ejercicio:
-Hacer una función que reciba el nombre de una persona, el año de nacimiento y el año actual retornando el mensaje "Hola 'nombre' tienes 'edad' años"
+Hacer una función que reciba el nombre de una persona, el año de nacimiento y el año actual retornando el mensaje "Hola 'nombre' tienes 'edad' años".
 #### 4.2 Código:
 ```python
 def mensaje(nom:str,act:int,naci:int)->int|str:
@@ -79,7 +79,7 @@ Hola Emilio tienes 19 años
 ---
 ### Ejercicio 5
 #### 5.1 Descripción del ejercicio:
-Hacer una función que imprima un reporte dadas cuatro listas (nombres,materias,calificaciones), recibiendo como argumento el ancho
+Hacer una función que imprima un reporte dadas cuatro listas (nombres, materias, calificaciones), recibiendo como argumento el ancho.
 #### 5.2 Código:
 ```python
 e = ["Nombre", "Est Dat", "Prog Func", "Ingles"]
@@ -109,7 +109,7 @@ Lupita               10             7.5            10
 ---
 ### Ejercicio 6
 #### 6.1 Descripción del ejercicio:
-Hacer una función que genere una tabla de multiplicar recibiendo como argumento el ancho, la cantidad de números y el número a multiplicar
+Hacer una función que genere una tabla de multiplicar recibiendo como argumento el ancho, la cantidad de números y el número a multiplicar.
 #### 6.2 Código:
 ```python
 def tabla(an:int,can:int,tab:int)->int:
@@ -131,7 +131,7 @@ if __name__=="__main__":
 ---
 ### Ejercicio 7
 #### 7.1 Descripción del ejercicio:
-Hacer una función que genere n tablas de multiplicar recibiendo como argumentos el número de tablas, el número hasta donde se va a multiplicar y el ancho
+Hacer una función que genere n tablas de multiplicar recibiendo como argumentos el número de tablas, el número hasta donde se va a multiplicar y el ancho.
 #### 7.2 Código:
 ```python
 def producto (a:int,b:int)->int:
@@ -171,7 +171,7 @@ if __name__=="__main__":
 ---
 ### Ejercicio 8
 #### 8.1 Descripción del ejercicio:
-Rellenar una lista con los números naturales del 1 al 10
+Rellenar una lista con los números naturales del 1 al 10.
 #### 8.2 Código:
 ```python
 lista_nat = []
@@ -190,7 +190,7 @@ if __name__=="__main__":
 ---
 ### Ejercicio 9
 #### 9.1 Descripción del ejercicio:
-Agrega los elementos 5,6,7 a la lista 1
+Agrega los elementos 5, 6, 7 a la lista 1.
 #### 9.2 Código:
 ```python
 lista1 = [0,1,2,3,4]
