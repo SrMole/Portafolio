@@ -75,3 +75,24 @@ mensaje("Emilio",2022,2003))
 ---
 ### Ejercicio 5.
 #### Descripción del ejercicio:
+Hacer una función que genere una tabla de multiplicar recibiendo como argumento la cantidad de números y el número a multiplicar
+### Código:
+```python
+def tabla(an:int,can:int,tab:int)->int:
+    for a in range(1,can+1):
+        print(f"{a:^{an}} x {tab:^{an}} = {a*tab:^{an}}") 
+```
+#### Entrada:
+```python
+tabla(10,4,2)
+```
+#### Salida:
+```python
+    1      x     2      =     2     
+    2      x     2      =     4     
+    3      x     2      =     6     
+    4      x     2      =     8    
+```
+---
+### Ejercicio 6.
+#### Descripción del ejercicio:
