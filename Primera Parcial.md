@@ -2,7 +2,7 @@
 ---
 ## Ejercicios resueltos en clase
 ---
-### Ejercicio 1.
+### Ejercicio 1
 #### 1.1 Descripción del ejercicio:
 Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "mensaje-nombre"
 #### 1.2 Código:
@@ -12,14 +12,15 @@ def mensaje(msg:str,nom:str)->str:
 ```
 #### 1.3 Implementación:
 ```python
-mensaje("Hola","Emilio")
+if __name__=="__main__":
+    print(mensaje("Hola","Emilio"))
 ```
 #### 1.4 Salida:
 ```python
 'Hola Emilio'
 ```
 ---
-### Ejercicio 2.
+### Ejercicio 2
 #### 2.1 Descripción del ejercicio:
 Escribir una función que reciba el nombre y la edad de una persona. El mensaje de salida tiene que ser: "Hola 'nombre' tienes 'edad' años"
 #### 2.2 Código:
@@ -29,14 +30,15 @@ def mensaje2(nom:str,edad:int)->str|int:
 ```
 #### 2.3 Implementación:
 ```python
-mensaje2("Emilio",19)
+if __name__=="__main__":
+    print(mensaje2("Emilio",19))
 ```
 #### 2.4 Salida:
 ```python
 'Hola Emilio tienes 19 años'
 ```
 ---
-### Ejercicio 3.
+### Ejercicio 3
 #### 3.1 Descripción del ejercicio:
 Escribir una función que reciba el año actual y el año de nacimineto, usando la funcion anterior envia esta como argumento y obtenga el mensaje: "Hola 'nombre', tienes 'edad' años"
 #### 3.2 Código:
@@ -49,14 +51,15 @@ def mensaje2(nom:str,edad:int)->str|int:
 ```
 #### 3.3 Implementación:
 ```python
-mensaje2("Emilio",edad(2022,2003))
+if __name__=="__main__":
+    print(mensaje2("Emilio",edad(2022,2003)))
 ```
 #### 3.4 Salida:
 ```python
 'Hola Emilio, tienes 19 años'
 ```
 ---
-### Ejercicio 4.
+### Ejercicio 4
 #### 4.1 Descripción del ejercicio:
 Hacer una funcion que reciba el nombre de un persona el año de nacimiento y el año actual retornando el mensaje "Hola 'nombre' tienes 'edad' años"
 #### 4.2 Código:
@@ -66,14 +69,15 @@ def mensaje(nom:str,act:int,naci:int)->int|str:
 ```
 #### 4.3 Implementación:
 ```python
-mensaje("Emilio",2022,2003))
+if __name__=="__main__":
+    print(mensaje("Emilio",2022,2003))
 ```
 #### 4.4 Salida:
 ```python
 'Hola Emilio tienes 19 años'
 ```
 ---
-### Ejercicio 6.
+### Ejercicio 6
 #### 6.1 Descripción del ejercicio:
 Hacer una función que genere una tabla de multiplicar recibiendo como argumento el ancho, la cantidad de números y el número a multiplicar
 ### 6.2 Código:
@@ -84,7 +88,8 @@ def tabla(an:int,can:int,tab:int)->int:
 ```
 #### 6.3 Implementación:
 ```python
-tabla(10,4,2)
+if __name__=="__main__":
+    print(tabla(10,4,2))
 ```
 #### 6.4 Salida:
 ```python
@@ -94,7 +99,7 @@ tabla(10,4,2)
     4      x     2      =     8    
 ```
 ---
-### Ejercicio 7.
+### Ejercicio 7
 #### 7.1 Descripción del ejercicio:
 Hacer una función que genere n tablas de multiplicar recibiendo como argumentos el número de tablas, el número hasta donde se va a multiplicar y el ancho
 ### 7.2 Código:
@@ -112,7 +117,8 @@ def tabla1(n:int,t:int,fmt:int)->int:
 ```
 #### 7.3 Implementación:
 ```python
-tablas(3,5,10)
+if __name__=="__main__":
+    print(tablas(3,5,10))
 ```
 #### 7.4 Salida:
 ```python
@@ -133,7 +139,7 @@ tablas(3,5,10)
     3     x    5     =    15     
 ```
 ---
-### Ejercicio 8.
+### Ejercicio 8
 #### 8.1 Descripción del ejercicio:
 Rellenar una lista con los números naturales del 1 al 10
 ### 8.2 Código:
@@ -144,14 +150,15 @@ for i in range(1,11):
 ```
 #### 8.3 Implementación:
 ```python
-print(lista_nat)
+if __name__=="__main__":
+    print(lista_nat)
 ```
 #### 8.4 Salida:
 ```python
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 ---
-### Ejercicio 9.
+### Ejercicio 9
 #### 9.1 Descripción del ejercicio:
 Agrega los elementos 5,6,7 a la lista 1
 ### 9.2 Código:
@@ -162,7 +169,8 @@ lista1[5:]=lista2
 ```
 #### 9.3 Implementación:
 ```python
-print(lista1)
+if __name__=="__main__":
+    print(lista1)
 ```
 #### 9.4 Salida:
 ```python
