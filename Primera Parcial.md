@@ -1,6 +1,6 @@
 # ***Primera Parcial: Tópicos avanzados de programación***
 ---
-## *Ejercicios resueltos en clase*
+## **Ejercicios resueltos en clase**
 ---
 ### Ejercicio 1
 #### 1.1 Descripción del ejercicio:
