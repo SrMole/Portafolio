@@ -75,7 +75,7 @@ mensaje("Emilio",2022,2003))
 ---
 ### Ejercicio 5.
 #### Descripción del ejercicio:
-Hacer una función que genere una tabla de multiplicar recibiendo como argumento la cantidad de números y el número a multiplicar
+Hacer una función que genere una tabla de multiplicar recibiendo como argumento el ancho, la cantidad de números y el número a multiplicar
 ### Código:
 ```python
 def tabla(an:int,can:int,tab:int)->int:
@@ -95,4 +95,42 @@ tabla(10,4,2)
 ```
 ---
 ### Ejercicio 6.
+#### Descripción del ejercicio:
+Hacer una función que genere n tablas de multiplicar recibiendo como argumentos el número de tablas, el número hasta donde se va a multiplicar y el ancho
+### Código:
+```python
+def producto (a:int,b:int)->int:
+    return a*b
+
+def tablas(m:int, n:int, fmt:int)->int:
+    for i in range(1,m+1):
+        tabla1(n,i,fmt)
+    
+def tabla1(n:int,t:int,fmt:int)->int:
+    for i in range(1,n+1):
+        print(f"{t:^{fmt}}x{i:^{fmt}}={producto(i,t):^{fmt}}")
+```
+#### Entrada:
+```python
+tablas(3,5,10)
+```
+#### Salida:
+```python
+    1     x    1     =    1     
+    1     x    2     =    2     
+    1     x    3     =    3     
+    1     x    4     =    4     
+    1     x    5     =    5     
+    2     x    1     =    2     
+    2     x    2     =    4     
+    2     x    3     =    6     
+    2     x    4     =    8     
+    2     x    5     =    10    
+    3     x    1     =    3     
+    3     x    2     =    6     
+    3     x    3     =    9     
+    3     x    4     =    12    
+    3     x    5     =    15     
+```
+### Ejercicio 7.
 #### Descripción del ejercicio:
