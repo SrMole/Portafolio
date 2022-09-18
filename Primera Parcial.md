@@ -19,7 +19,7 @@ if __name__=="__main__":
 Hola Emilio
 ```
 ---
-### *Ejercicio 2*
+## *Ejercicio 2*
 #### 2.1 Descripción del ejercicio:
 Escribir una función que reciba el nombre y la edad de una persona. El mensaje de salida tiene que ser: "Hola 'nombre' tienes 'edad' años".
 #### 2.2 Código:
@@ -37,7 +37,7 @@ if __name__=="__main__":
 Hola Emilio tienes 19 años
 ```
 ---
-### *Ejercicio 3*
+## *Ejercicio 3*
 #### 3.1 Descripción del ejercicio:
 Escribir una función que reciba el año actual y el año de nacimineto, usando la funcion anterior envia esta como argumento y obtenga el mensaje: "Hola 'nombre', tienes 'edad' años".
 #### 3.2 Código:
@@ -58,7 +58,7 @@ if __name__=="__main__":
 Hola Emilio, tienes 19 años
 ```
 ---
-### *Ejercicio 4*
+## *Ejercicio 4*
 #### 4.1 Descripción del ejercicio:
 Hacer una función que reciba el nombre de una persona, el año de nacimiento y el año actual retornando el mensaje "Hola 'nombre' tienes 'edad' años".
 #### 4.2 Código:
@@ -76,7 +76,7 @@ if __name__=="__main__":
 Hola Emilio tienes 19 años
 ```
 ---
-### *Ejercicio 5*
+## *Ejercicio 5*
 #### 5.1 Descripción del ejercicio:
 Hacer una función que imprima un reporte dadas cuatro listas (nombres, materias, calificaciones), recibiendo como argumento el ancho.
 #### 5.2 Código:
@@ -106,7 +106,7 @@ Luis                8.32            8.5           9.86
 Lupita               10             7.5            10   
 ```
 ---
-### *Ejercicio 6*
+## *Ejercicio 6*
 #### 6.1 Descripción del ejercicio:
 Hacer una función que genere una tabla de multiplicar recibiendo como argumento el ancho, la cantidad de números y el número a multiplicar.
 #### 6.2 Código:
@@ -128,7 +128,7 @@ if __name__=="__main__":
     4      x     2      =     8    
 ```
 ---
-### *Ejercicio 7*
+## *Ejercicio 7*
 #### 7.1 Descripción del ejercicio:
 Hacer una función que genere n tablas de multiplicar recibiendo como argumentos el número de tablas, el número hasta donde se va a multiplicar y el ancho.
 #### 7.2 Código:
@@ -168,7 +168,7 @@ if __name__=="__main__":
     3     x    5     =    15     
 ```
 ---
-### *Ejercicio 8*
+## *Ejercicio 8*
 #### 8.1 Descripción del ejercicio:
 Rellenar una lista con los números naturales del 1 al 10.
 #### 8.2 Código:
@@ -187,7 +187,7 @@ if __name__=="__main__":
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 ---
-### *Ejercicio 9*
+## *Ejercicio 9*
 #### 9.1 Descripción del ejercicio:
 Agrega los elementos 5, 6, 7 a la lista 1.
 #### 9.2 Código:
