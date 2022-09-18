@@ -16,7 +16,7 @@ if __name__=="__main__":
     print(mensaje("Hola","Emilio"))
 ```
 #### 1.4 Salida:
-```python
+```
 Hola Emilio
 ```
 ---
