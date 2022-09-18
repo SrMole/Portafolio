@@ -10,5 +10,12 @@ Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "m
 def mensaje(msg:str,nom:str)->str:
     return f"{msg} {nom}"
 ```
-
+#### Entrada:
+```python
+mensaje("Hola","Emilio")
+```
+#### Salida:
+```python
+Hola Emilio
+```
 
