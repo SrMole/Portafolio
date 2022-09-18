@@ -3,43 +3,43 @@
 ## Ejercicios resueltos en clase
 ---
 ### Ejercicio 1.
-#### Descripción del ejercicio:
+#### 1.1 Descripción del ejercicio:
 Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "mensaje-nombre"
-#### Código:
+#### 1.2 Código:
 ```python
 def mensaje(msg:str,nom:str)->str:
     return f"{msg} {nom}"
 ```
-#### Implementación:
+#### 1.3 Implementación:
 ```python
 mensaje("Hola","Emilio")
 ```
-#### Salida:
+#### 1.4 Salida:
 ```python
 'Hola Emilio'
 ```
 ---
 ### Ejercicio 2.
-#### Descripción del ejercicio:
+#### 2.1 Descripción del ejercicio:
 Escribir una función que reciba el nombre y la edad de una persona. El mensaje de salida tiene que ser: "Hola 'nombre' tienes 'edad' años"
-#### Código:
+#### 2.2 Código:
 ```python
 def mensaje2(nom:str,edad:int)->str|int:
     return f"Hola {nom} tienes {edad} años"
 ```
-#### Implementación:
+#### 2.3 Implementación:
 ```python
 mensaje2("Emilio",19)
 ```
-#### Salida:
+#### 2.4 Salida:
 ```python
 'Hola Emilio tienes 19 años'
 ```
 ---
 ### Ejercicio 3.
-#### Descripción del ejercicio:
-Escribir una función que reciba el año actual y el año de nacimineto, usando la funcion anterior envia esta como argumento y obtenga el mensaje: "Hola 'nombre' tienes 'edad' años"
-#### Código:
+#### 3.1 Descripción del ejercicio:
+Escribir una función que reciba el año actual y el año de nacimineto, usando la funcion anterior envia esta como argumento y obtenga el mensaje: "Hola 'nombre', tienes 'edad' años"
+#### 3.2 Código:
 ```python
 def edad(act:int,naci:int)->int:
     return act-naci
@@ -47,46 +47,46 @@ def edad(act:int,naci:int)->int:
 def mensaje2(nom:str,edad:int)->str|int:
     return f"Hola {nom} tienes {edad} años"
 ```
-#### Implementación:
+#### 3.3 Implementación:
 ```python
 mensaje2("Emilio",edad(2022,2003))
 ```
-#### Salida:
+#### 3.4 Salida:
 ```python
-'Hola Emilio tienes 19 años'
+'Hola Emilio, tienes 19 años'
 ```
 ---
 ### Ejercicio 4.
-#### Descripción del ejercicio:
+#### 4.1 Descripción del ejercicio:
 Hacer una funcion que reciba el nombre de un persona el año de nacimiento y el año actual retornando el mensaje "Hola 'nombre' tienes 'edad' años"
-#### Código:
+#### 4.2 Código:
 ```python
 def mensaje(nom:str,act:int,naci:int)->int|str:
     return f"Hola {nom}, tienes {act-naci} años"
 ```
-#### Implementación:
+#### 4.3 Implementación:
 ```python
 mensaje("Emilio",2022,2003))
 ```
-#### Salida:
+#### 4.4 Salida:
 ```python
 'Hola Emilio tienes 19 años'
 ```
 ---
-### Ejercicio 5.
-#### Descripción del ejercicio:
+### Ejercicio 6.
+#### 6.1 Descripción del ejercicio:
 Hacer una función que genere una tabla de multiplicar recibiendo como argumento el ancho, la cantidad de números y el número a multiplicar
-### Código:
+### 6.2 Código:
 ```python
 def tabla(an:int,can:int,tab:int)->int:
     for a in range(1,can+1):
         print(f"{a:^{an}} x {tab:^{an}} = {a*tab:^{an}}") 
 ```
-#### Implementación:
+#### 6.3 Implementación:
 ```python
 tabla(10,4,2)
 ```
-#### Salida:
+#### 6.4 Salida:
 ```python
     1      x     2      =     2     
     2      x     2      =     4     
@@ -94,10 +94,10 @@ tabla(10,4,2)
     4      x     2      =     8    
 ```
 ---
-### Ejercicio 6.
-#### Descripción del ejercicio:
+### Ejercicio 7.
+#### 7.1 Descripción del ejercicio:
 Hacer una función que genere n tablas de multiplicar recibiendo como argumentos el número de tablas, el número hasta donde se va a multiplicar y el ancho
-### Código:
+### 7.2 Código:
 ```python
 def producto (a:int,b:int)->int:
     return a*b
@@ -110,11 +110,11 @@ def tabla1(n:int,t:int,fmt:int)->int:
     for i in range(1,n+1):
         print(f"{t:^{fmt}}x{i:^{fmt}}={producto(i,t):^{fmt}}")
 ```
-#### Implementación:
+#### 7.3 Implementación:
 ```python
 tablas(3,5,10)
 ```
-#### Salida:
+#### 7.4 Salida:
 ```python
     1     x    1     =    1     
     1     x    2     =    2     
@@ -134,37 +134,37 @@ tablas(3,5,10)
 ```
 ---
 ### Ejercicio 8.
-#### Descripción del ejercicio:
+#### 8.1 Descripción del ejercicio:
 Rellenar una lista con los números naturales del 1 al 10
-### Código:
+### 8.2 Código:
 ```python
 lista_nat = []
 for i in range(1,11):
     lista_nat.append(i)
 ```
-#### Implementación:
+#### 8.3 Implementación:
 ```python
 print(lista_nat)
 ```
-#### Salida:
+#### 8.4 Salida:
 ```python
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 ---
 ### Ejercicio 9.
-#### Descripción del ejercicio:
+#### 9.1 Descripción del ejercicio:
 Agrega los elementos 5,6,7 a la lista 1
-### Código:
+### 9.2 Código:
 ```python
 lista1 = [0,1,2,3,4]
 lista2 = [5,6,7]
 lista1[5:]=lista2
 ```
-#### Implementación:
+#### 9.3 Implementación:
 ```python
 print(lista1)
 ```
-#### Salida:
+#### 9.4 Salida:
 ```python
 [0, 1, 2, 3, 4, 5, 6, 7]
 ```
