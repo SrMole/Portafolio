@@ -151,3 +151,21 @@ print(lista_nat)
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 ---
+### Ejercicio 8.
+#### Descripción del ejercicio:
+Agrega los elementos 5,6,7 a la lista 1
+### Código:
+```python
+lista1 = [0,1,2,3,4]
+lista2 = [5,6,7]
+lista1[5:]=lista2
+```
+#### Entrada:
+```python
+print(lista1)
+```
+#### Salida:
+```python
+[0, 1, 2, 3, 4, 5, 6, 7]
+```
+---
