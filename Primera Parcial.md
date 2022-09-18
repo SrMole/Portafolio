@@ -4,7 +4,7 @@
 ---
 ### *Ejercicio 1*
 #### 1.1 Descripción del ejercicio:
-Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "mensaje-nombre".
+Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "'mensaje' 'nombre'".
 #### 1.2 Código:
 ```python
 def mensaje(msg:str,nom:str)->str:
