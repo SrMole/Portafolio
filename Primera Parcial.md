@@ -10,7 +10,7 @@ Escribir una función que reciba un mensaje y un nombre y escriba en pantalla "m
 def mensaje(msg:str,nom:str)->str:
     return f"{msg} {nom}"
 ```
-#### Entrada:
+#### Implementación:
 ```python
 mensaje("Hola","Emilio")
 ```
@@ -27,7 +27,7 @@ Escribir una función que reciba el nombre y la edad de una persona. El mensaje 
 def mensaje2(nom:str,edad:int)->str|int:
     return f"Hola {nom} tienes {edad} años"
 ```
-#### Entrada:
+#### Implementación:
 ```python
 mensaje2("Emilio",19)
 ```
@@ -47,7 +47,7 @@ def edad(act:int,naci:int)->int:
 def mensaje2(nom:str,edad:int)->str|int:
     return f"Hola {nom} tienes {edad} años"
 ```
-#### Entrada:
+#### Implementación:
 ```python
 mensaje2("Emilio",edad(2022,2003))
 ```
@@ -64,7 +64,7 @@ Hacer una funcion que reciba el nombre de un persona el año de nacimiento y el 
 def mensaje(nom:str,act:int,naci:int)->int|str:
     return f"Hola {nom}, tienes {act-naci} años"
 ```
-#### Entrada:
+#### Implementación:
 ```python
 mensaje("Emilio",2022,2003))
 ```
@@ -82,7 +82,7 @@ def tabla(an:int,can:int,tab:int)->int:
     for a in range(1,can+1):
         print(f"{a:^{an}} x {tab:^{an}} = {a*tab:^{an}}") 
 ```
-#### Entrada:
+#### Implementación:
 ```python
 tabla(10,4,2)
 ```
@@ -110,7 +110,7 @@ def tabla1(n:int,t:int,fmt:int)->int:
     for i in range(1,n+1):
         print(f"{t:^{fmt}}x{i:^{fmt}}={producto(i,t):^{fmt}}")
 ```
-#### Entrada:
+#### Implementación:
 ```python
 tablas(3,5,10)
 ```
@@ -133,7 +133,7 @@ tablas(3,5,10)
     3     x    5     =    15     
 ```
 ---
-### Ejercicio 7.
+### Ejercicio 8.
 #### Descripción del ejercicio:
 Rellenar una lista con los números naturales del 1 al 10
 ### Código:
@@ -142,7 +142,7 @@ lista_nat = []
 for i in range(1,11):
     lista_nat.append(i)
 ```
-#### Entrada:
+#### Implementación:
 ```python
 print(lista_nat)
 ```
@@ -151,7 +151,7 @@ print(lista_nat)
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 ---
-### Ejercicio 8.
+### Ejercicio 9.
 #### Descripción del ejercicio:
 Agrega los elementos 5,6,7 a la lista 1
 ### Código:
@@ -160,7 +160,7 @@ lista1 = [0,1,2,3,4]
 lista2 = [5,6,7]
 lista1[5:]=lista2
 ```
-#### Entrada:
+#### Implementación:
 ```python
 print(lista1)
 ```
