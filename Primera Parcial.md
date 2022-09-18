@@ -102,7 +102,7 @@ if __name__=="__main__":
 ### Ejercicio 7
 #### 7.1 Descripción del ejercicio:
 Hacer una función que genere n tablas de multiplicar recibiendo como argumentos el número de tablas, el número hasta donde se va a multiplicar y el ancho
-### 7.2 Código:
+#### 7.2 Código:
 ```python
 def producto (a:int,b:int)->int:
     return a*b
