@@ -80,7 +80,7 @@ if __name__=="__main__":
 ### Ejercicio 6
 #### 6.1 Descripción del ejercicio:
 Hacer una función que genere una tabla de multiplicar recibiendo como argumento el ancho, la cantidad de números y el número a multiplicar
-### 6.2 Código:
+#### 6.2 Código:
 ```python
 def tabla(an:int,can:int,tab:int)->int:
     for a in range(1,can+1):
@@ -142,7 +142,7 @@ if __name__=="__main__":
 ### Ejercicio 8
 #### 8.1 Descripción del ejercicio:
 Rellenar una lista con los números naturales del 1 al 10
-### 8.2 Código:
+#### 8.2 Código:
 ```python
 lista_nat = []
 for i in range(1,11):
@@ -161,7 +161,7 @@ if __name__=="__main__":
 ### Ejercicio 9
 #### 9.1 Descripción del ejercicio:
 Agrega los elementos 5,6,7 a la lista 1
-### 9.2 Código:
+#### 9.2 Código:
 ```python
 lista1 = [0,1,2,3,4]
 lista2 = [5,6,7]
