@@ -1,4 +1,4 @@
-# Primera Parcial: Tópicos avanzados de programación
+# ***Primera Parcial: Tópicos avanzados de programación***
 ---
 ## Ejercicios resueltos en clase
 ---
