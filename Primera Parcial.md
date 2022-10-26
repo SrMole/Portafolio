@@ -1,5 +1,5 @@
 
-# **Ejercicios resueltos en clase**
+# **Ejercicios resueltos en clase (python)**
 ---
 ## *Ejercicio 1*
 #### 1.1 Descripción del ejercicio:
