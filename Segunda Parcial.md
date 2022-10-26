@@ -1,4 +1,4 @@
-# **Ejercicios resueltos en clase (dart)**
+# **Ejercicios resueltos en clase (Dart)**
 ---
 ## *Ejercicio 1*
 #### 1.1 Descripción del ejercicio:
