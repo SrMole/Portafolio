@@ -288,7 +288,7 @@ class Monstruo extends Ave {
 
   void showMonstruo() {
     super.showAve();
-    print("Asusta?: $_asusta");
+    print("Asusta: $_asusta");
   }
 ```
 #### 6.3 Implementación:
@@ -346,7 +346,7 @@ Habitad: Transilvania
 Color: Negro y Blanco
 Patas: 2
 Alas: 2
-Asusta?: Si
+Asusta: Si
 Monstruo asustando
 ```
 ---
