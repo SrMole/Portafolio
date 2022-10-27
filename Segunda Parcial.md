@@ -2,7 +2,7 @@
 ---
 ## *Ejercicio 1*
 #### 1.1 Descripción del ejercicio:
-
+Diseñar una calculadora con el uso de funciones
 #### 1.2 Código:
 ```dart
 
