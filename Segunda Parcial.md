@@ -2,7 +2,7 @@
 ---
 ## *Ejercicio 1*
 #### 1.1 Descripción del ejercicio:
-Diseñar una calculadora utilizando el uso de funciones
+Diseña una calculadora utilizando el uso de funciones.
 #### 1.2 Código:
 ```dart
 String leerDatos(String mensaje) {
@@ -52,7 +52,7 @@ Dame el segundo número
 ---
 ## *Ejercicio 2*
 #### 2.1 Descripción del ejercicio:
-Diseñar el reporte de un estudiante usando clases
+Diseña el reporte de un estudiante usando clases.
 #### 2.2 Código:
 ```dart
 class Estudiante {
@@ -85,7 +85,7 @@ Número de cuenta: 20184531
 ---
 ## *Ejercicio 3*
 #### 3.1 Descripción del ejercicio:
-Diseñar una calculadora utilizando el uso de clases
+Diseña una calculadora utilizando el uso de clases.
 #### 3.2 Código:
 ```dart
 class Calculadora {
@@ -136,18 +136,69 @@ void main(List<String> args) {
 ---
 ## *Ejercicio 5*
 #### 5.1 Descripción del ejercicio:
-
+Diseña una clase "Vehiculo" la cual contiene las propiedades "Número de llantas, Color, Modelo y Marca" y los métodos "Arrancar, Correr y Frenar".
 #### 5.2 Código:
 ```dart
+class Vehiculo {
+  int _Nollantas = 0;
+  String _color = "";
+  String _modelo = "";
+  String _marca = "";
 
+  Vehiculo(this._Nollantas, this._color, this._marca, this._modelo);
+  Vehiculo.marca(this._marca);
+
+  void arrancar() {
+    print("Arrancando");
+  }
+
+  void correr() {
+    print("Corriendo");
+  }
+
+  void frenar() {
+    print("Frenando");
+  }
+
+  void showVehiculo() {
+    print("Número de llantas: $_Nollantas");
+    print("Color: $_color");
+    print("Modelo: $_modelo");
+    print("Marca: $_marca");
+    arrancar();
+    correr();
+    frenar();
+  }
+}
 ```
 #### 5.3 Implementación:
 ```dart
+void main(List<String> args) {
+  Vehiculo jeep = new Vehiculo(4, "Negro", "Gladiator", "Jeep");
+  Vehiculo sentra = new Vehiculo.marca("Nissan");
 
+  jeep.showVehiculo();
+  print("");
+  sentra.showVehiculo();
+}
 ```
 #### 5.4 Salida:
 ```
+Número de llantas: 4
+Color: Negro
+Modelo: Jeep
+Marca: Gladiator
+Arrancando
+Corriendo
+Frenando
 
+Número de llantas: 0
+Color:
+Modelo:
+Marca: Nissan
+Arrancando
+Corriendo
+Frenando
 ```
 ---
 ## *Ejercicio 6*
