@@ -136,7 +136,7 @@ void main(List<String> args) {
 ---
 ## *Ejercicio 5*
 #### 5.1 Descripción del ejercicio:
-Diseña una clase "Vehiculo" la cual contiene las propiedades "Número de llantas, Color, Modelo y Marca" y los métodos "Arrancar, Correr y Frenar".
+Diseña una clase "Vehiculo" la cual contenga las propiedades "Número de llantas, Color, Modelo y Marca" y los métodos "Arrancar, Correr y Frenar".
 #### 5.2 Código:
 ```dart
 class Vehiculo {
@@ -203,7 +203,7 @@ Frenando
 ---
 ## *Ejercicio 6*
 #### 6.1 Descripción del ejercicio:
-Diseña una clase "Animal" que herede sus propiedades a las clases "Perro y Ave" y luego que una de estas dos clases herede sus propiedades a la clase "Monstruo".
+Diseña una clase "Animal" que herede sus propiedades a las clases "Perro y Ave" y luego que una de estas clases herede sus propiedades a la clase "Monstruo".
 #### 6.2 Código:
 ```dart
 class Animal {
