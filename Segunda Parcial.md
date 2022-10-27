@@ -2,7 +2,7 @@
 ---
 ## *Ejercicio 1*
 #### 1.1 Descripción del ejercicio:
-Diseñar una calculadora con el uso de funciones
+Diseñar una calculadora utilizando el uso de funciones
 #### 1.2 Código:
 ```dart
 String leerDatos(String mensaje) {
@@ -32,7 +32,7 @@ int divi(int num1, int num2) => num1 ~/ num2;
 ```
 #### 1.3 Implementación:
 ```dart
-void main() {
+void main(List<String> args) {
   String op = leerDatos("Indica la operación [+,-,*,/]");
   int num1 = int.parse(leerDatos("Dame el primer número"));
   int num2 = int.parse(leerDatos("Dame el segundo número"));
@@ -52,34 +52,70 @@ Dame el segundo número
 ---
 ## *Ejercicio 2*
 #### 2.1 Descripción del ejercicio:
-
+Diseñar el reporte de un estudiante usando clases
 #### 2.2 Código:
 ```dart
-
+class Estudiante {
+  String? Carrera;
+  int? Semestre;
+  String? NoCuenta;
+  void reporte() {
+    print("Carrera: $Carrera");
+    print("Semestre: $Semestre");
+    print("Número de cuenta: $NoCuenta");
+  }
+}
 ```
 #### 2.3 Implementación:
 ```dart
-
+void main(List<String> args) {
+  var estudiante1 = Estudiante();
+  estudiante1.Carrera = "Ingeniería en Computación Inteligente";
+  estudiante1.Semestre = 3;
+  estudiante1.NoCuenta = "20184531";
+  estudiante1.reporte();
+}
 ```
 #### 2.4 Salida:
 ```
-
+Carrera: Ingeniería en Computación Inteligente
+Semestre: 3
+Número de cuenta: 20184531
 ```
 ---
 ## *Ejercicio 3*
 #### 3.1 Descripción del ejercicio:
-
+Diseñar una calculadora utilizando el uso de clases
 #### 3.2 Código:
 ```dart
-
+class Calculadora {
+  int a = 0, b = 0;
+  int suma(int a, int b) => a + b;
+  int resta(int a, int b) => a - b;
+  int multiplicacion(int a, int b) => a * b;
+  double division(int a, int b) => a / b;
+}
 ```
 #### 3.3 Implementación:
 ```dart
+void main(List<String> args) {
+  Calculadora miSC = Calculadora();
 
+  miSC.a = 5;
+  miSC.b = 10;
+  
+  print("${miSC.a} + ${miSC.b} = ${miSC.suma(miSC.a, miSC.b)}");
+  print("${miSC.a} - ${miSC.b} = ${miSC.resta(miSC.a, miSC.b)}");
+  print("${miSC.a} * ${miSC.b} = ${miSC.multiplicacion(miSC.a, miSC.b)}");
+  print("${miSC.a} / ${miSC.b} = ${miSC.division(miSC.a, miSC.b)}");
+}
 ```
 #### 3.4 Salida:
 ```
-
+5 + 10 = 15
+5 - 10 = -5
+5 * 10 = 50
+5 / 10 = 0.5
 ```
 ---
 ## *Ejercicio 4*
