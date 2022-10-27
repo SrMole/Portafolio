@@ -52,7 +52,7 @@ Dame el segundo número
 ---
 ## *Ejercicio 2*
 #### 2.1 Descripción del ejercicio:
-Diseña el reporte de un estudiante usando clases.
+Diseña el reporte de un estudiante utilizando el uso clases.
 #### 2.2 Código:
 ```dart
 class Estudiante {
@@ -203,17 +203,150 @@ Frenando
 ---
 ## *Ejercicio 6*
 #### 6.1 Descripción del ejercicio:
-
+Diseña una clase "Animal" que herede sus propiedades a las clases "Perro y Ave" y luego que una de estas dos clases herede sus propiedades a la clase "Monstruo".
 #### 6.2 Código:
 ```dart
+class Animal {
+  String _especie = "";
+  String _habitat = "";
+  String _color = "";
+  int _patas = 0;
 
+  Animal();
+  Animal.data(this._especie, this._habitat, this._color, this._patas);
+
+  void correr() {
+    print("Animal Corriendo");
+  }
+
+  void caminar() {
+    print("Perro Caminando");
+  }
+
+  void volando() {
+    print("Ave Fiuuuuum");
+  }
+
+  void showAnimal() {
+    print("Especie: $_especie");
+    print("Habitad: $_habitat");
+    print("Color: $_color");
+    print("Patas: $_patas");
+  }
+}
+
+class Perro extends Animal {
+  String _raza = "";
+
+  Perro.data(_especie, _habitat, _color, _patas, this._raza)
+      : super.data(_especie, _habitat, _color, _patas);
+
+  void ladrar() {
+    print("Perro Guaaaaau");
+  }
+
+  void caminar() {
+    super.caminar();
+  }
+
+  void showPerro() {
+    super.showAnimal();
+    print("Raza: $_raza");
+  }
+}
+
+class Ave extends Animal {
+  int _alas = 0;
+
+  Ave();
+  Ave.data(_especie, _habitat, _color, _patas, this._alas)
+      : super.data(_especie, _habitat, _color, _patas);
+
+  void volando() {
+    super.volando();
+  }
+
+  void asustando() {
+    print("Monstruo asustando");
+  }
+
+  void showAve() {
+    super.showAnimal();
+    print("Alas: $_alas");
+  }
+}
+
+class Monstruo extends Ave {
+  String _asusta = "";
+
+  Monstruo.data(_especie, _habitat, _color, _patas, _alas, this._asusta)
+      : super.data(_especie, _habitat, _color, _patas, _alas);
+
+  void asustando() {
+    super.asustando();
+  }
+
+  void showMonstruo() {
+    super.showAve();
+    print("Asusta?: $_asusta");
+  }
 ```
 #### 6.3 Implementación:
 ```dart
+void main() {
+  print("");
+  Animal jaguar = new Animal.data("Jaguar", "Selva", "Amarillo", 4);
+  jaguar.showAnimal();
+  jaguar.correr();
+  print("");
 
+  Perro chihuahua = new Perro.data("Perro", "Casa", "Cafe", 4, "Chihuahua");
+  chihuahua.showPerro();
+  chihuahua.ladrar();
+  chihuahua.caminar();
+  print("");
+
+  Ave golondrina = new Ave.data("golondrinas", "arbolitos", "Cafe", 2, 2);
+  golondrina.showAve();
+  golondrina.volando();
+  print("");
+
+  Monstruo dracula = new Monstruo.data(
+      "Vampiro", "Transilvania", "Negro y Blanco", 2, 2, "Si");
+  dracula.showMonstruo();
+  dracula.asustando();
+  print("");
+}
 ```
 #### 6.4 Salida:
 ```
+Especie: Jaguar
+Habitad: Selva
+Color: Amarillo
+Patas: 4
+Animal Corriendo
 
+Especie: Perro
+Habitad: Casa
+Color: Cafe
+Patas: 4
+Raza: Chihuahua
+Perro Guaaaaau
+Perro Caminando
+
+Especie: golondrinas
+Habitad: arbolitos
+Color: Cafe
+Patas: 2
+Alas: 2
+Ave Fiuuuuum
+
+Especie: Vampiro
+Habitad: Transilvania
+Color: Negro y Blanco
+Patas: 2
+Alas: 2
+Asusta?: Si
+Monstruo asustando
 ```
 ---
