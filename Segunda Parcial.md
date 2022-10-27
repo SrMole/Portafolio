@@ -203,7 +203,7 @@ Frenando
 ---
 ## *Ejercicio 6*
 #### 6.1 Descripción del ejercicio:
-Diseña una clase "Animal" que herede sus propiedades y métodos a las clases "Perro y Ave" y luego que una de estas clases herede sus propiedades a la clase "Monstruo".
+Diseña una clase "Animal" que herede sus propiedades y métodos a las clases "Perro y Ave" y luego que una de estas dos herede a la clase "Monstruo".
 #### 6.2 Código:
 ```dart
 class Animal {
