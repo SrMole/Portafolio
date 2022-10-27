@@ -123,15 +123,42 @@ void main(List<String> args) {
 
 #### 4.2 Código:
 ```dart
+class Persona {
+  String nombre = "";
+  String aPaterno = "";
+  String aMaterno = "";
+  int aNacimiento = 0;
 
+  int calcularEdad(int aNacimiento) => 2022 - aNacimiento;
+
+  void showName(String nombre, String aPaterno, String aMaterno) {
+    print("$aPaterno $aMaterno $nombre");
+  }
+
+  void showname2() {
+    print("$aPaterno $aMaterno $nombre");
+  }
+}
 ```
 #### 4.3 Implementación:
 ```dart
+void main(List<String> args) {
+  Persona emilio = new Persona();
+  emilio.aMaterno = "Morales";
+  emilio.aPaterno = "Manzano";
+  emilio.nombre = "Emilio";
+  emilio.aNacimiento = 2003;
 
+  emilio.showName(emilio.nombre, emilio.aPaterno, emilio.aMaterno);
+  print("Tienes ${emilio.calcularEdad(emilio.aNacimiento)} años");
+  emilio.showname2();
+}
 ```
 #### 4.4 Salida:
 ```
-
+Manzano Morales Emilio
+Tienes 19 años
+Manzano Morales Emilio
 ```
 ---
 ## *Ejercicio 5*
@@ -293,7 +320,7 @@ class Monstruo extends Ave {
 ```
 #### 6.3 Implementación:
 ```dart
-void main() {
+void main(List<String> args) {
   print("");
   Animal jaguar = new Animal.data("Jaguar", "Selva", "Amarillo", 4);
   jaguar.showAnimal();
