@@ -120,7 +120,7 @@ void main(List<String> args) {
 ---
 ## *Ejercicio 4*
 #### 4.1 Descripción del ejercicio:
-Diseña una clase "Persona" la cual calcule la edad e imprima el nombre de la persona.
+Diseña una clase "Persona" la cual calcule la edad e imprima el nombre de una persona.
 #### 4.2 Código:
 ```dart
 class Persona {
