@@ -1,3 +1,3 @@
-# **Ejercicios resueltos en clase (Dart)**
+# **Ejercicios del PDF de Elixir**
 ---
 ## *Ejercicio 1*
