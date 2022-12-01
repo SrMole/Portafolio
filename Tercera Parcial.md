@@ -4,3 +4,10 @@
 #### 1.1 Descripción del ejercicio:
 Función sin argumentos.
 #### 1.2 Código:
+```elixir
+defmodule HolaMundo do
+  def mensaje do
+    IO.puts("Hola Mundo")
+  end
+end
+```
