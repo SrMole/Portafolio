@@ -151,7 +151,7 @@ iex()> Geometria.perimetro_rectangulo(4,3)
 ---
 ## *Ejercicio 7*
 #### 7.1 Descripción:
-Las invocaciones internas de una función no requieren del prefijo del nombre del módulo
+Las invocaciones internas de una función no requieren del prefijo del nombre del módulo.
 #### 7.2 Código:
 ```elixir
 defmodule Geometria do
@@ -172,3 +172,30 @@ iex()> Geometria.cuadrado(4)
 16
 ```
 ---
+## *Ejercicio 8*
+#### 8.1 Descripción:
+Visibilidad de funciones.
+#### 8.2 Código:
+```elixir
+defmodule TestPublicoPrivado do
+  def funcion_publica(msg) do
+    IO.puts("#{msg} publico")
+    funcion_privada(msg)
+  end
+  
+  defp funcion_privada(msg) do
+    IO.puts("#{msg} privado")
+  end
+end
+
+TestPublicoPrivado.funcion_publica("este es un mensaje")
+```
+#### 8.3 Salida:
+```
+iex> c("modulo01.ex")
+este es un mensaje publico
+este es un mensaje privado
+[TestPublicoPrivado]
+```
+---
+
