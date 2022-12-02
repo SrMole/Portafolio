@@ -1,19 +1,4 @@
-# **Ejercicios del PDF de Elixir**
+# **Ejercicios realizados en clase (Elixir)**
 ---
-
-#### 1.1 Descripción:
-
-#### 1.2 Código:
-```elixir
-defmodule HolaMundo do
-  def mensaje do
-    IO.puts("Hola Mundo")
-  end
-end
-```
-#### 1.3 Salida:
-```
-iex()> HolaMundo.mensaje
-Hola Mundo
-:ok
-``` 
+## Utilización del Shell de Elixir
+#### Cargar en la terminal el Shell (iex)
