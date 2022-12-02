@@ -139,9 +139,9 @@ Hola Mundo
 ##### Código:
 ```elixir
 defmodule Calculadora do
- def suma(n1,n2) do
-  n1 + n2
- end
+  def suma(n1,n2) do
+    n1 + n2
+  end
 end
 ```
 ##### Salida:
@@ -150,4 +150,31 @@ C:\>iex modulo01.ex
 Interactive Elixir (1.10.4) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)> Calculadora.suma(4,5)
 9
+```
+#### Un módulo puede estar dentro de un archivo. Un archivo puede contener varios módulos.
+##### Código:
+```elixir
+defmodule Calculadora do
+  def suma(n1,n2) do
+    n1 + n2
+  end
+end
+
+defmodule Areas do
+  def area_cuadrado(l) do
+    l*l
+  end
+end
+```
+##### Salida:
+```
+iex()> c("modulo01.ex")
+warning: redefining module Calculadora (current version defined in memory)
+  modulo01.ex:1
+  
+[Areas, Calculadora]
+iex()> Areas.area_cuadrado(4)
+16
+iex()> Calculadora.suma(5,5)
+10
 ```
