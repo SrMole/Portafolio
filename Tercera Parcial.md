@@ -1,7 +1,7 @@
 # **Ejercicios del PDF de Elixir**
 ---
 ## *Ejercicio 1*
-#### 1.1 Descripción del ejercicio:
+#### 1.1 Descripción:
 Función sin argumentos.
 #### 1.2 Código:
 ```elixir
@@ -19,7 +19,7 @@ Hola Mundo
 ```
 ---
 ## *Ejercicio 2*
-#### 2.1 Descripción del ejercicio:
+#### 2.1 Descripción:
 Función con argumentos.
 #### 2.2 Código:
 ```elixir
@@ -38,7 +38,7 @@ iex(1)> Calculadora.suma(4,5)
 ```
 ---
 ## *Ejercicio 3*
-#### 3.1 Descripción del ejercicio:
+#### 3.1 Descripción:
 Archivo con varios módulos.
 #### 3.2 Código:
 ```elixir
@@ -67,7 +67,7 @@ iex()> Calculadora.suma(5,5)
 ```
 ---
 ## *Ejercicio 4*
-#### 4.1 Descripción del ejercicio:
+#### 4.1 Descripción:
 Reglas de los módulos.
 #### 4.2 Código:
 ```elixir
@@ -94,8 +94,8 @@ iex()> Geometria.Rectangulo.perimetro(4,2)
 ```
 ---
 ## *Ejercicio 5*
-#### 5.1 Descripción del ejercicio:
-Anidar de la siguiente forma.
+#### 5.1 Descripción:
+Anidación de funciones.
 #### 5.2 Código:
 ```elixir
 defmodule Geometria do
@@ -128,7 +128,7 @@ iex(9)> Geometria.Rectangulo.perimetro(4,2)
 ```
 ---
 ## *Ejercicio 6*
-#### 6.1 Descripción del ejercicio:
+#### 6.1 Descripción:
 Funciones expresadas de manera condensada.
 #### 6.2 Código:
 ```elixir
@@ -139,11 +139,36 @@ end
 ```
 #### 6.3 Salida:
 ```
+Los paréntesis en los argumentos son opcionales.
+
 iex()> c("modulo01.ex")
 [Geometria]
 iex()> Geometria.perimetro_cuadrado(4)
 16
 iex()> Geometria.perimetro_rectangulo(4,3)
 14
+```
+---
+## *Ejercicio 7*
+#### 7.1 Descripción:
+Las invocaciones internas de una función no requieren del prefijo del nombre del módulo
+#### 7.2 Código:
+```elixir
+defmodule Geometria do
+  def perimetro1(l), do: cuadrado(l)
+  def perimetro2(l), do: Geometria.cuadrado(l)
+  def cuadrado(l), do: 4*l
+end
+```
+#### 7.3 Salida:
+```
+iex()> c("modulo01.ex")
+[Geometria]
+iex()> Geometria.perimetro1(4)
+16
+iex()> Geometria.perimetro2(4)
+16
+iex()> Geometria.cuadrado(4)
+16
 ```
 ---
