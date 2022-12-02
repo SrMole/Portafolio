@@ -178,3 +178,27 @@ iex()> Areas.area_cuadrado(4)
 iex()> Calculadora.suma(5,5)
 10
 ```
+#### Reglas de los módulos
+##### Código:
+```elixir
+defmodule Geometria.Cuadrado do
+  def perimetro(l) do
+    4*l
+  end
+end
+
+defmodule Geometria.Rectangulo do
+  def perimetro(l1,l2) do
+    2*l1 + 2*l2
+  end
+end
+```
+##### Salida:
+```
+iex()> c("modulo01.ex")
+[Geometria.Cuadrado, Geometria.Rectangulo]
+iex()> Geometria.Cuadrado.perimetro(4)
+16
+iex()> Geometria.Rectangulo.perimetro(4,2)
+12
+```
