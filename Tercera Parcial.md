@@ -122,4 +122,16 @@ Hola Mundo
 ```
 #### Función sin argumentos
 ##### Código:
-
+```elixir
+defmodule HolaMundo do
+  def mensaje do
+    IO.puts("Hola Mundo")
+  end
+end
+```
+##### Salida:
+```
+iex()> HolaMundo.mensaje
+Hola Mundo
+:ok
+```
