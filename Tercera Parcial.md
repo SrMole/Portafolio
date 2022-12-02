@@ -135,3 +135,19 @@ iex()> HolaMundo.mensaje
 Hola Mundo
 :ok
 ```
+#### Función con argumentos
+##### Código:
+```elixir
+defmodule Calculadora do
+ def suma(n1,n2) do
+  n1 + n2
+ end
+end
+```
+##### Salida:
+```
+C:\>iex modulo01.ex
+Interactive Elixir (1.10.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)> Calculadora.suma(4,5)
+9
+```
