@@ -127,3 +127,23 @@ iex(9)> Geometria.Rectangulo.perimetro(4,2)
 12
 ```
 ---
+## *Ejercicio 6*
+#### 6.1 Descripción del ejercicio:
+Funciones expresadas de manera condensada.
+#### 6.2 Código:
+```elixir
+defmodule Geometria do
+  def perimetro_cuadrado(l), do: 4*l
+  def perimetro_rectangulo(l1,l2), do: 2*l1 + 2*l2
+end
+```
+#### 5.3 Salida:
+```
+iex()> c("modulo01.ex")
+[Geometria]
+iex()> Geometria.perimetro_cuadrado(4)
+16
+iex()> Geometria.perimetro_rectangulo(4,3)
+14
+```
+---
