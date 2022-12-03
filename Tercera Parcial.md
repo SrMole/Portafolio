@@ -151,7 +151,7 @@ Interactive Elixir (1.10.4) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)> Calculadora.suma(4,5)
 9
 ```
-#### Un módulo puede estar dentro de un archivo. Un archivo puede contener varios módulos.
+#### Un archivo puede contener varios módulos.
 ##### Código:
 ```elixir
 defmodule Calculadora do
@@ -173,10 +173,10 @@ warning: redefining module Calculadora (current version defined in memory)
   modulo01.ex:1
   
 [Areas, Calculadora]
-iex()> Areas.area_cuadrado(4)
-16
-iex()> Calculadora.suma(5,5)
-10
+iex()> Areas.area_cuadrado(5)
+25
+iex()> Calculadora.suma(12,5)
+17
 ```
 #### Reglas de los módulos
 ##### Código:
