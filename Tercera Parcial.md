@@ -270,7 +270,7 @@ iex()> Geometria.perimetro2(4)
 iex()> Geometria.cuadrado(4)
 16
 ```
-### Visibilidad de funciones
+#### Visibilidad de funciones
 ##### Código:
 ```elixir
 defmodule TestPublicoPrivado do
@@ -508,4 +508,68 @@ iex()> ModuloMain.main()
 Funcion main
 Esta funcion es importada con alias
 :ok
+```
+### Atributos de módulo
+#### Existen los atributos en tiempo de compilación (Mientras están cargados)
+##### Código:
+```elixir
+defmodule Geometria do
+  @pi 3.141592
+  def area(r) do
+    r*r*@pi
+  end
+  def circunferencia(r) do
+    2 * r * @pi
+  end
+end
+```
+##### Salida:
+```
+iex> c("main.ex")
+[Geometria]
+iex> alias Geometria, as: G
+Geometria
+iex> G.area(4)
+50.265472
+iex> G.circunferencia(4)
+25.132736
+```
+#### Elixir permite el registro de atributos, que se almacenarán en el archivo binario
+##### Código:
+```elixir
+defmodule Geometria do
+  @moduledoc "Calcula el area y el perimetro de un circulo"
+  
+  @pi 3.141592
+
+  @doc "calcula el area del circulo"
+  def area(r), do: r*r*@pi
+  
+  @doc "calcula el perimetro de un circulo"
+  def circunferencia(r), do: 2 * r * @pi
+end
+```
+##### Comprobación:
+```
+iex> Code.fetch_docs(Geometria)
+{:docs_v1, 2, :elixir, "text/markdown",
+  %{"en" => "Calcula el area y el perimetro de un circulo"}, %{},
+  [
+    {{:function, :area, 1}, 6, ["area(r)"],
+    %{"en" => "calcula el area del circulo"}, %{}},
+    {{:function, :circunferencia, 1}, 9, ["circunferencia(r)"],
+    %{"en" => "calcula el perimetro de un circulo"}, %{}}
+  ]}
+iex> h Geometria
+* Geometria
+
+Calcula el area y el perimetro de un circulo
+iex> h Geometria.area
+* def area(r)
+
+calcula el area del circulo
+iex> h Geometria.circunferencia
+* def circunferencia(r)
+
+calcula el perimetro de un circulo
 ```
