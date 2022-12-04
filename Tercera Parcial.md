@@ -146,9 +146,9 @@ end
 ```
 ##### Salida:
 ```
-C:\>iex porta.exs
+C:\>iex porta.ex
 Interactive Elixir (1.10.4) - press Ctrl+C to exit (type h() ENTER for help)
-iex(1)> Calculadora.suma(4,5)
+iex()> Calculadora.suma(4,5)
 9
 ```
 #### Un archivo puede contener varios módulos
@@ -168,7 +168,7 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("porta.exs")
+iex()> c("porta.ex")
 [Areas, Calculadora]
 iex()> Areas.area_cuadrado(5)
 25
@@ -192,7 +192,7 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("porta.exs")
+iex()> c("porta.ex")
 [Geometria.Cuadrado, Geometria.Rectangulo]
 iex()> Geometria.Cuadrado.perimetro(4)
 16
@@ -217,11 +217,11 @@ end
 ```
 ##### Salida:
 ```
-iex(7)> c("porta.exs")
+iex()> c("porta.ex")
 [Geometria, Geometria.Cuadrado, Geometria.Rectangulo]
-iex(8)> Geometria.Cuadrado.perimetro(4)
+iex()> Geometria.Cuadrado.perimetro(4)
 16
-iex(9)> Geometria.Rectangulo.perimetro(4,2)
+iex()> Geometria.Rectangulo.perimetro(4,2)
 12
 ```
 #### Las funciones pueden expresarse de manera condensada
@@ -234,7 +234,7 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("porta.exs")
+iex()> c("porta.ex")
 [Geometria]
 iex()> Geometria.perimetro_cuadrado(4)
 16
@@ -261,7 +261,7 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("porta.exs")
+iex()> c("porta.ex")
 [Geometria]
 iex()> Geometria.perimetro1(4)
 16
@@ -270,7 +270,7 @@ iex()> Geometria.perimetro2(4)
 iex()> Geometria.cuadrado(4)
 16
 ```
-#### Visibilidad de funciones
+### Visibilidad de funciones
 ##### Código:
 ```elixir
 defmodule TestPublicoPrivado do
@@ -287,7 +287,7 @@ TestPublicoPrivado.funcion_publica("este es un mensaje")
 ```
 ##### Salida:
 ```
-iex> c("porta.exs")
+iex> c("porta.ex")
 este es un mensaje publico
 este es un mensaje privado
 [TestPublicoPrivado]
@@ -303,7 +303,7 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("porta.exs")
+iex()> c("porta.ex")
 [Geometria]
 iex()> Geometria.perimetro1(4)
 16
@@ -339,11 +339,12 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("porta.exs")
+iex()> c("porta.ex")
 [Operaciones, Test]
 iex()> Test.start
 81
 ```
+---
 ## Estructura del código
 #### Aridad (arity)
 ##### Código:
@@ -359,7 +360,7 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("porta.exs")
+iex()> c("porta.ex")
 [Rectangulo]
 iex()> Rectangulo.area(2)
 4
@@ -380,13 +381,14 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("modulo01.ex")
+iex()> c("porta.ex")
 [Calculadora]
 iex()> Calculadora.suma(6)
 6
 iex()> Calculadora.suma(13,2)
 15
 ```
+### Argumentos por defecto
 #### Se pueden especificar argumentos por defecto mediante el operador
 ##### Código:
 ```elixir
@@ -398,7 +400,7 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("porta.exs")
+iex()> c("porta.ex")
 [Calculadora]
 iex()> Calculadora.suma(3)
 3
@@ -416,7 +418,7 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("porta.exs")
+iex()> c("porta.ex")
 [Calculadora]
 iex()> Calculadora.funcion(4,5)
 12
@@ -427,12 +429,83 @@ iex()> Calculadora.funcion(4,5,6,7)
 iex()> Calculadora.funcion(4,5,6,7,8)
 30
 ```
-#### Imports
+### Imports
 ##### Código:
 ```elixir
+import ModuloImportado
 
+defmodule ModuloMain do
+  def main do
+    IO.puts("Funcion main")
+    funcion_importada("Esta funcion es importada")
+  end
+end
+```
+#### Creamos el Módulo a importar modsec.ex
+##### Código:
+```elixir
+defmodule ModuloImportado do
+  def funcion_importada(msg) do
+    IO.puts(msg)
+  end
+end
+```
+#### Compilamos en iex la función a importar
+```
+iex> c("modsec.ex")
+[ModuloImportado]
+```
+#### Compilamos en iex la función que va a importar
+```
+iex> c("main.ex")
+[ModuloMain]
+```
+#### Ejecutamos la función main
+##### Salida:
+```
+iex> ModuloMain.main()
+Funcion main
+Esta funcion es importada
+:ok
+```
+#### Si no se quiere importar el módulo, se puede utilizar de manera directa indicando el módulo y la función esto es:
+##### Código:
+```elixir
+defmodule ModuloMain do
+  def main do
+    IO.puts("Funcion main")
+    ModuloImportado.funcion_importada("Esta funcion es importada")
+  end
+end
 ```
 ##### Salida:
 ```
-
+iex()> c("main.ex")
+[ModuloMain]
+iex()> ModuloMain.main()
+Funcion main
+Esta funcion es importada
+:ok
+```
+### Alias
+#### Se puede utilizar alias como alternativa a import, permite hacer una referencia a un módulo con otro nombre
+##### Código:
+```elixir
+defmodule ModuloMain do
+  alias ModuloImportado, as: MI
+  
+  def main do
+    IO.puts("Funcion main")
+    MI.funcion_importada("Esta funcion es importada con alias")
+  end
+end
+```
+##### Salida (bash):
+```
+iex(10)> c("main.ex")
+[ModuloMain]
+iex()> ModuloMain.main()
+Funcion main
+Esta funcion es importada con alias
+:ok
 ```
