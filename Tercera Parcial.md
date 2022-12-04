@@ -151,7 +151,7 @@ Interactive Elixir (1.10.4) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)> Calculadora.suma(4,5)
 9
 ```
-#### Un archivo puede contener varios módulos.
+#### Un archivo puede contener varios módulos
 ##### Código:
 ```elixir
 defmodule Calculadora do
@@ -298,7 +298,7 @@ este es un mensaje privado
 defmodule Geometria do
   def perimetro1(l), do: cuadrado(l)
   def perimetro2(l), do: Geometria.cuadrado(l)
-  def cuadrado(l), do: 4*l
+  defp cuadrado(l), do: 4*l
 end
 ```
 ##### Salida:
@@ -339,8 +339,100 @@ end
 ```
 ##### Salida:
 ```
-iex()> c("modulo01.ex")
+iex()> c("porta.exs")
 [Operaciones, Test]
 iex()> Test.start
 81
+```
+## Estructura del código
+#### Aridad (arity)
+##### Código:
+```elixir
+defmodule Rectangulo do
+  def area(l) do
+    l * l
+  end
+  def area(l1,l2) do
+    l1 * l2
+  end
+end
+```
+##### Salida:
+```
+iex()> c("porta.exs")
+[Rectangulo]
+iex()> Rectangulo.area(2)
+4
+iex()> Rectangulo.area(2,5)
+10
+```
+#### Haciendo que una función dependa de otra de diferente aridad, se podría realizar lo siguiente
+##### Código:
+```elixir
+defmodule Calculadora do
+  def suma(n) do
+    suma(n,0)
+  end
+  def suma(n1,n2) do
+    n1 + n2
+  end
+end
+```
+##### Salida:
+```
+iex()> c("modulo01.ex")
+[Calculadora]
+iex()> Calculadora.suma(6)
+6
+iex()> Calculadora.suma(13,2)
+15
+```
+#### Se pueden especificar argumentos por defecto mediante el operador
+##### Código:
+```elixir
+defmodule Calculadora do
+  def suma(n1,n2 \\ 0) do
+    n1 + n2
+  end
+end
+```
+##### Salida:
+```
+iex()> c("porta.exs")
+[Calculadora]
+iex()> Calculadora.suma(3)
+3
+iex()> Calculadora.suma(7,3)
+10
+```
+#### Se puede utilizar cualquier combinación de argumentos por defecto
+##### Código:
+```elixir
+defmodule Calculadora do
+  def funcion(n1,n2 \\ 0, n3 \\ 1, n4, n5 \\ 2) do
+    n1 + n2 + n3 + n4 + n5
+  end
+end
+```
+##### Salida:
+```
+iex()> c("porta.exs")
+[Calculadora]
+iex()> Calculadora.funcion(4,5)
+12
+iex()> Calculadora.funcion(4,5,6)
+18
+iex()> Calculadora.funcion(4,5,6,7)
+24
+iex()> Calculadora.funcion(4,5,6,7,8)
+30
+```
+#### Imports
+##### Código:
+```elixir
+
+```
+##### Salida:
+```
+
 ```
