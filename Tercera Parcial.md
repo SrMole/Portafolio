@@ -1253,3 +1253,98 @@ iex> Persona2.sexo(:f)
 iex> Persona2.sexo(:x)
 "Sexo desconocido"
 ```
+#### Case
+##### Código:
+```elixir
+defmodule Persona3 do
+  def sexo(sex) do
+    case sex do
+      :m -> "Masculino"
+      :f -> "Femenino"
+      _ -> "Sexo desconocido"
+    end
+  end
+end
+```
+##### Salida:
+```
+iex> c("main.ex")
+[Persona3]
+iex> Persona3.sexo(:m)
+"Masculino"
+iex> Persona3.sexo(:f)
+"Femenino"
+iex> Persona3.sexo(:x)
+"Sexo desconocido"
+```
+### Match con funciones
+#### Ejemplo 1
+##### Código:
+```elixir
+defmodule Persona4 do
+  def sexo(sex) when sex == :m do
+    "Masculino"
+  end
+  def sexo(sex) when sex == :f do
+    "Femenino"
+  end
+  def sexo(_sex) do
+    "sexo desconocido"
+  end
+end
+```
+##### Salida:
+```
+iex> c("main.ex")
+[Persona4]
+iex> Persona4.sexo(:m)
+"Masculino"
+iex> Persona4.sexo(:f)
+"Femenino"
+iex> Persona4.sexo(:x)
+"sexo desconocido"
+```
+#### Ejemplo 2
+##### Código:
+```elixir
+defmodule Persona5 do
+  def sexo(sex) when sex == :m, do: "Masculino"
+  def sexo(sex) when sex == :f, do: "Femenino"
+  def sexo(_sex), do: "sexo desconocido"
+end
+```
+##### Salida:
+```
+iex> c("main.ex")
+[Persona5]
+iex> Persona5.sexo(:m)
+"Masculino"
+iex> Persona5.sexo(:f)
+"Femenino"
+iex> Persona5.sexo(:x)
+"sexo desconocido"
+```
+#### Cond
+##### Código:
+```elixir
+defmodule Persona6 do
+  def sexo(sex) do
+    cond do
+      sex == :m -> "Masculino"
+      sex == :f -> "Femenino"
+      true -> "Sexo desconocido"
+    end
+  end
+end
+```
+##### Salida:
+```
+iex> c("main.ex")
+[Persona6]
+iex> Persona6.sexo(:m)
+"Masculino"
+iex> Persona6.sexo(:f)
+"Femenino"
+iex> Persona6.sexo(:x)
+"Sexo desconocido"
+```
