@@ -807,11 +807,11 @@ false
 ### Tuplas
 #### Permiten agrupar elementos fijos
 ```
-iex>persona = {"Alex", 49}
-{"Alex", 49}
-iex> i {"Alex", 49}
+iex>persona = {"Emilio", 19}
+{"Emilio", 19}
+iex> i {"Alex", 19}
 Term
-  {"Alex", 49}
+  {"Emilio", 19}
 Data type
   Tuple
 Reference modules
@@ -822,30 +822,30 @@ Implemented protocols
 #### Para extraer elementos se usa la función elem
 ```
 iex> nombre = elem(persona, 0)
-"Alex"
+"Emilio"
 iex> nombre
-"Alex"
+"Emilio"
 iex> edad = elem(persona,1)
-49
+19
 iex> edad
-49
+19
 ```
 #### Para modificar un elemento se usa la función put_elem
 ```
-iex> put_elem(persona,0,"Alexander")
-{"Alexander", 49}
+iex> put_elem(persona,0,"Emilio")
+{"Emilio", 19}
 ```
 #### Las tuplas son inmutables, por lo que no se modifica
 ```
 iex> persona
-{"Alex", 49}
+{"Emilio", 19}
 ```
 #### Si se necesita cambiar, hay que almacenar el cambio en otra variable, o en la misma si ya no se desea conservar los valores
 ```
-iex> persona = put_elem(persona,0,"Alexander")
-{"Alexander", 49}
+iex> persona = put_elem(persona,0,"Emilio")
+{"Emilio", 19}
 iex> persona
-{"Alexander", 49}
+{"Emilio", 19}
 ```
 ### Listas
 #### Manejo dinámico de datos
@@ -905,3 +905,80 @@ iex> numeros_naturales = [1,2,3,4] ++ [5,6,7,8]
 iex> numeros_naturales
 [1, 2, 3, 4, 5, 6, 7, 8]
 ```
+#### Recursion sobre listas
+```
+iex> []
+[]
+iex> [1|[]]
+[1]
+iex> [1|[2|[]]]
+[1, 2]
+iex> [1|[2|[3|[]]]]
+[1, 2, 3]
+iex> [1|[2|[3|[4|[]]]]]
+[1, 2, 3, 4]
+iex> [1|[2,3,4]]
+[1, 2, 3, 4]
+```
+#### Funciones hd y tl
+```
+iex> numeros = [1,2,3,4,5]
+[1, 2, 3, 4, 5]
+iex> hd(numeros)
+1
+iex> tl(numeros)
+[2, 3, 4, 5]
+iex> [head | tail] = numeros
+[1, 2, 3, 4, 5]
+iex> head
+1
+iex> tail
+[2, 3, 4, 5]
+```
+#### Agregar elementos a una lista
+```
+iex> numeros = [0 | numeros]
+[0, 1, 2, 3, 4, 5]
+iex> numeros
+[0, 1, 2, 3, 4, 5]
+```
+### Mapas
+#### Par llave-valor
+```
+iex> persona = %{:nombre => "Emilio", :edad => 19, :trabajo =>"paseador"}
+%{edad: 19, nombre: "Emilio", trabajo: "paseador"}
+iex> persona
+%{edad: 19, nombre: "Emilio", trabajo: "paseador"}
+iex> consonantes = %{:z => "zeta", :m => "eme", :x => "equis", :b => "be"}
+%{b: "be", m: "eme", x: "equis", z: "zeta"}
+iex> consonantes = %{:z => "zeta", :m => "eme", :x => "equis", :b => "be", :n => "ene"}
+%{b: "be", m: "eme", n: "ene", x: "equis", z: "zeta"}
+iex> consonantes = %{:z => "zeta", :m => "eme", :x => "equis", :b => "be", :n => "ene", :a => "aaaa"}
+%{a: "aaaa", b: "be", m: "eme", n: "ene", x: "equis", z: "zeta"}
+```
+#### Otra forma de representar los mapas
+```
+iex> %{nombre: "Emilio", paterno: "Manzano", edad: 19}
+%{edad: 19, nombre: "Emilio", paterno: "Manzano"}
+```
+#### Acceder a un elementro a través de su llave
+```
+iex> persona = %{:nombre => "Emilio", :edad => 19, :trabajo =>"paseador"}
+%{edad: 19, nombre: "Emilio", trabajo: "paseador"}
+iex> persona[:nombre]
+"Emilio"
+iex> persona[:edad]
+19
+iex> persona[:apellido]
+nil
+```
+#### Ventajas de usar atoms como llave
+```
+iex> persona.nombre
+"Emilio"
+iex> persona.edad
+19
+iex> persona.apellido
+** (KeyError) key :apellido not found in: %{edad: 19, nombre: "Emilio", trabajo: "paseador"}
+```
+#### 
