@@ -981,4 +981,275 @@ iex> persona.edad
 iex> persona.apellido
 ** (KeyError) key :apellido not found in: %{edad: 19, nombre: "Emilio", trabajo: "paseador"}
 ```
-#### 
+#### Insertar un nuevo llave-par
+```
+iex> Map.put(persona, :apellido, "Morales")
+%{apellido: "Morales", edad: 19, nombre: "Emilio", trabajo: "paseador"}
+iex> persona
+%{edad: 19, nombre: "Emilio", trabajo: "paseador"}
+```
+#### Obtener el valor de una llave con Map
+```
+iex> Map.get(persona, :nombre)
+"Emilio"
+iex> persona.nombre
+"Emilio"
+iex> persona[:nombre]
+"Emilio"
+```
+### Binaries
+#### Un binary es un grupo de bytes
+```
+iex()> <<1,2,3,4,5>>
+<<1, 2, 3, 4, 5>>
+iex> <<255>>
+<<255>>
+iex> <<256>>
+<<0>>
+iex> <<257>>
+<<1>>
+iex> <<512>>
+<<0>>
+```
+### Strings (Binary Strings)
+```
+iex> "Esto es un String"
+"Esto es un String"
+```
+#### Se pueden insertar expresiones en las cadenas (interpolación de cadenas) mediante #{}
+```
+iex> "El cuadrado de 2 es #{2*2}"
+"El cuadrado de 2 es 4"
+```
+#### Secuencias de escape
+##### Código:
+```elixir
+IO.puts("1. Este es un mensaje")
+IO.puts("2. Este es un \n mensaje")
+IO.puts("3. Este es un \"mensaje\"")
+IO.puts("4. Este es un \\mensaje\\")
+IO.puts("5. Este \t es \tun \t mensaje")
+IO.puts("4. Este
+es un
+mensaje")
+```
+##### Salida:
+```
+1. Este es un mensaje
+2. Este es un
+mensaje
+3. Este es un "mensaje"
+4. Este es un \mensaje\
+5. Este es un mensaje
+4. Este
+es un
+mensaje
+```
+#### Sigils
+##### Código:
+```elixir
+IO.puts(~s("este es un ejemplo de sigil" apuntes de Elixir))
+IO.puts("Este \t es \tun \t mensaje")
+IO.puts(~S("Este \t es \tun \t mensaje"))
+```
+##### Salida:
+```
+"este es un ejemplo de sigil" apuntes de Elixir
+Este es un mensaje
+"Este \t es \tun \t mensaje"
+```
+#### Concatenación de Cadenas
+##### Código:
+```elixir
+defmodule Cadena do
+  def concatenar(cad1, cad2, separador \\ " ") do
+    cad1 <> separador <> cad2
+  end
+end
+
+IO.puts(Cadena.concatenar("Hola", "Mundo"))
+IO.puts(Cadena.concatenar("Hola", "Mundo", "<->"))
+```
+##### Salida:
+```
+iex> elixir main.ex
+Hola Mundo
+Hola<->Mundo
+```
+### Pattern Matching
+#### Evita la refijación "^"
+```
+iex> x = 3
+3
+iex> 3 = x
+3
+iex> 5 = x
+** (MatchError) no match of right hand side value: 3
+iex> x = 5
+5
+iex> x
+5
+iex> ^x = 5
+5
+iex> ^x = 10
+** (MatchError) no match of right hand side value: 10
+iex> 10 = x
+** (MatchError) no match of right hand side value: 5
+```
+#### Tuplas
+```
+iex> leer_archivo_ok = {:ok, "texto del archivo"}
+{:ok, "texto del archivo"}
+iex> leer_archivo_error = {:error, "No se pudo leer el archivo"}
+{:error, "No se pudo leer el archivo"}
+iex(8)> {:ok, respuesta} = leer_archivo_ok
+{:ok, "texto del archivo"}
+iex(9)> respuesta
+"texto del archivo"
+iex(10)> {:error, respuesta} = leer_archivo_error
+{:error, "No se pudo leer el archivo"}
+iex(11)> respuesta
+"No se pudo leer el archivo"
+```
+#### Listas
+```
+iex> [head | tail] = [1,2,3,4]
+[1, 2, 3, 4]
+iex> head
+1
+iex> tail
+[2, 3, 4]
+iex> [head | _] = [1,2,3,4]
+[1, 2, 3, 4]
+iex> head
+1
+iex> [_ | tail] = [1,2,3,4]
+[1, 2, 3, 4]
+iex> tail
+[2, 3, 4]
+iex> mi_lista = [1,2,3,4]
+[1, 2, 3, 4]
+iex> [1,2,x,4] = mi_lista
+[1, 2, 3, 4]
+iex> x
+3
+```
+#### Funciones
+##### Código:
+```elixir
+defmodule Calculadora do
+  def div(_,0) do
+    {:error, "No se puede dividir por 0"}
+  end
+  def div(n1, n2) do
+    {:ok, "El resultado es: #{n1/n2}"}
+  end
+end
+
+IO.inspect(Calculadora.div(5,0))
+IO.inspect(Calculadora.div(5,3))
+```
+##### Salida:
+```
+iex> elixir main.ex
+{:error, "No se puede dividir por 0"}
+{:ok, "El resultado es: 1.6666666666666667"}
+```
+#### Si invertimos el orden de las funciones, es decir
+##### Código:
+```elixir
+defmodule Calculadora do
+  def div(n1, n2) do
+    {:ok, "El resultado es: #{n1/n2}"}
+  end
+  def div(_,0) do
+    {:error, "No se puede dividir por 0"}
+  end
+end
+
+IO.inspect(Calculadora.div(5,0))
+IO.inspect(Calculadora.div(5,3))
+```
+##### Salida:
+```
+iex> elixir main.ex
+warning: this clause for div/2 cannot match because a previous clause at line 2 always matches
+  main.ex:5
+  
+** (ArithmeticError) bad argument in arithmetic expression
+   main.ex:3: Calculadora.div/2
+   main.ex:10: (file)
+   (elixir 1.10.4) lib/code.ex:926: Code.require_file/2
+```
+#### Guardas
+##### Código:
+```elixir
+defmodule Numero do
+  def cero?(0), do: true
+  def cero?(n) when is_integer(n), do: false
+  def cero?(_), do: "No es entero"
+end
+
+IO.puts(Numero.cero?(0))
+IO.puts(Numero.cero?(2))
+IO.puts(Numero.cero?("3"))
+```
+##### Salida:
+```
+iex> elixir main.ex
+true
+false
+No es entero
+```
+### Condicionales
+#### if ejemplo 1
+##### Código:
+```elixir
+defmodule Persona1 do
+  def sexo(sex) do
+    if sex == :m do
+      "Masculino"
+    else
+      "Femenino"
+    end
+  end
+end
+```
+##### Salida:
+```
+iex> c("main.ex")
+[Persona1]
+iex> Persona1.sexo(:m)
+"Masculino"
+iex> Persona1.sexo(:f)
+"Femenino"
+iex> Persona1.sexo(:x)
+"Femenino"
+```
+#### if ejemplo 2
+##### Código:
+```elixir
+defmodule Persona2 do
+  def sexo(sex) do
+    if sex == :m do
+      "Masculino"
+      else if sex == :f do
+        "Femenino"
+        else
+          "Sexo desconocido"
+      end
+    end
+  end
+end
+```
+##### Salida:
+```
+iex> c("main.ex")
+[Persona2]
+iex> Persona2.sexo(:m)
+"Masculino"
+iex> Persona2.sexo(:f)
+"Femenino"
+iex> Persona2.sexo(:x)
+"Sexo desconocido"
+```
