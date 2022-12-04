@@ -549,7 +549,7 @@ defmodule Geometria do
   def circunferencia(r), do: 2 * r * @pi
 end
 ```
-##### Comprobación:
+##### Salida (comprobación):
 ```
 iex> Code.fetch_docs(Geometria)
 {:docs_v1, 2, :elixir, "text/markdown",
@@ -572,4 +572,8 @@ iex> h Geometria.circunferencia
 * def circunferencia(r)
 
 calcula el perimetro de un circulo
+```
+### Tipos de datos
+#### Numeros
+```
 ```
