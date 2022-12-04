@@ -805,3 +805,103 @@ iex> !(5+4)
 false
 ```
 ### Tuplas
+#### Permiten agrupar elementos fijos
+```
+iex>persona = {"Alex", 49}
+{"Alex", 49}
+iex> i {"Alex", 49}
+Term
+  {"Alex", 49}
+Data type
+  Tuple
+Reference modules
+  Tuple
+Implemented protocols
+  IEx.Info, Inspect
+```
+#### Para extraer elementos se usa la función elem
+```
+iex> nombre = elem(persona, 0)
+"Alex"
+iex> nombre
+"Alex"
+iex> edad = elem(persona,1)
+49
+iex> edad
+49
+```
+#### Para modificar un elemento se usa la función put_elem
+```
+iex> put_elem(persona,0,"Alexander")
+{"Alexander", 49}
+```
+#### Las tuplas son inmutables, por lo que no se modifica
+```
+iex> persona
+{"Alex", 49}
+```
+#### Si se necesita cambiar, hay que almacenar el cambio en otra variable, o en la misma si ya no se desea conservar los valores
+```
+iex> persona = put_elem(persona,0,"Alexander")
+{"Alexander", 49}
+iex> persona
+{"Alexander", 49}
+```
+### Listas
+#### Manejo dinámico de datos
+```
+iex> numeros_pares = [2,4,6,8,10]
+[2, 4, 6, 8, 10]
+iex> i [2, 4, 6, 8, 10]
+Term
+  [2, 4, 6, 8, 10]
+Data type
+  List
+Reference modules
+  List
+Implemented protocols
+  Collectable, Enumerable, IEx.Info, Inspect, List.Chars, String.Chars
+iex> length(numeros_pares)
+5
+```
+#### Obtener un elemento de la lista mediante la función Enum.at/2
+```
+iex> Enum.at(numeros_pares,4)
+10
+iex> Enum.at(numeros_pares,5)
+nil
+```
+#### Se puede saber si x elemento pertenece a una lista con operador in
+```
+iex> 2 in numeros_pares
+true
+iex> 12 in numeros_pares
+false
+```
+#### Módulo List
+```
+iex> List.replace_at(numeros_pares,4,12)
+[2, 4, 6, 8, 12]
+iex> numeros_pares
+[2, 4, 6, 8, 10]
+iex> nuevos_pares = List.replace_at(numeros_pares,4,12)
+[2, 4, 6, 8, 12]
+iex> numeros_pares = List.replace_at(numeros_pares,4,12)
+[2, 4, 6, 8, 12]
+```
+#### Insertar un elemento
+```
+iex> numeros_pares
+[2, 4, 6, 8, 12]
+iex> numeros_pares = List.insert_at(numeros_pares,4,10)
+[2, 4, 6, 8, 10, 12]
+iex> numeros_pares = List.insert_at(numeros_pares,-1,14)
+[2, 4, 6, 8, 10, 12, 14]
+```
+#### Concatenar dos listas
+```
+iex> numeros_naturales = [1,2,3,4] ++ [5,6,7,8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+iex> numeros_naturales
+[1, 2, 3, 4, 5, 6, 7, 8]
+```
