@@ -438,7 +438,7 @@ defmodule ModuloMain do
   end
 end
 ```
-#### Creamos el Módulo a importar modsec.ex
+#### Creamos el módulo a importar modsec.ex
 ##### Código:
 ```elixir
 defmodule ModuloImportado do
