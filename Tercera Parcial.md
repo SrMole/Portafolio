@@ -466,7 +466,7 @@ Funcion main
 Esta funcion es importada
 :ok
 ```
-#### Si no se quiere importar el módulo, se puede utilizar de manera directa indicando el módulo y la función esto es:
+#### Si no se quiere importar el módulo, se puede utilizar de manera directa indicando el módulo y la función esto es
 ##### Código:
 ```elixir
 defmodule ModuloMain do
@@ -1153,7 +1153,7 @@ iex> elixir main.ex
 {:error, "No se puede dividir por 0"}
 {:ok, "El resultado es: 1.6666666666666667"}
 ```
-#### Si invertimos el orden de las funciones, es decir
+#### Si invertimos el orden de las funciones
 ##### Código:
 ```elixir
 defmodule Calculadora do
