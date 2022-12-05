@@ -80,8 +80,7 @@ Prints the documentation for the given callback function.
 It also accepts single module argument to list
 all available behaviour callbacks.
 ```
----
-## Variables
+### Variables
 #### Elixir es un lenguaje de programación dinámico
 ```
 iex()> dia_semana = 7 <fija (binds) el valor>
@@ -112,8 +111,7 @@ iex()> dia_semana = 7 <se refija el valor inicial>
 iex()> dia_semana <se verifica el efecto de la refijación>
 7 <>
 ```
----
-## Estructura del código (módulos y funciones)
+### Estructura del código (módulos y funciones)
 #### Función puts
 ```
 iex()> IO.puts("Hola Mundo")
@@ -1202,7 +1200,7 @@ false
 No es entero
 ```
 ### Condicionales
-#### if ejemplo 1
+#### Ejemplo 1
 ##### Código:
 ```elixir
 defmodule Persona1 do
@@ -1226,7 +1224,7 @@ iex> Persona1.sexo(:f)
 iex> Persona1.sexo(:x)
 "Femenino"
 ```
-#### if ejemplo 2
+#### Ejemplo 2
 ##### Código:
 ```elixir
 defmodule Persona2 do
@@ -1348,3 +1346,352 @@ iex> Persona6.sexo(:f)
 iex> Persona6.sexo(:x)
 "Sexo desconocido"
 ```
+---
+## Herramienta mix
+### Es una herramienta de la línea de comandos (CLI)
+#### Crear proyectos
+```
+C:\>mix new calculadora
+* creating README.md
+* creating .formatter.exs
+* creating .gitignore
+* creating mix.exs
+* creating lib
+* creating lib/calculadora.ex
+* creating test
+* creating test/test_helper.exs
+* creating test/calculadora_test.exs
+
+Your Mix project was created successfully.
+You can use "mix" to compile it, test it, and more:
+
+    cd calculadora
+    mix test
+    
+Run "mix help" for more commands.
+```
+### Carga de una aplicación
+#### Ingresar al directorio dondese creo la nueva aplicación
+```
+C:\>cd calculadora
+C:\calculadora>
+```
+#### Lanzar el shell de Elixir con mix
+```
+C:\calculadora>iex -S mix
+Compiling 1 file (.ex)
+Generated calculadora app
+Interactive Elixir (1.10.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)>
+```
+#### Ejecutar la función hello()
+```
+iex(1)> Calculadora.hello()
+:world
+iex(2)>
+```
+### Documentación con ExDoc
+#### Abrir el archivo mix.exs y Modificar las dependencias agregando {:ex_doc, “~>0.12”}
+```elixir
+defp deps do
+  [
+    {:ex_doc, "~>0.12"}
+  ]
+end
+```
+#### Ejecutar el comando mix deps.get
+```
+C:\calculadora>mix deps.get
+Resolving Hex dependencies...
+Dependency resolution completed:
+New:
+  earmark_parser 1.4.12
+  ex_doc 0.23.0
+  makeup 1.0.5
+  makeup_elixir 0.15.0
+  nimble_parsec 1.1.0
+* Getting ex_doc (Hex package)
+* Getting earmark_parser (Hex package)
+* Getting makeup_elixir (Hex package)
+* Getting makeup (Hex package)
+* Getting nimble_parsec (Hex package)
+
+C:\calculadora>
+```
+#### Ejecutar mix docs
+```
+C:\calculadora>mix docs
+==> earmark_parser
+Compiling 1 file (.yrl)
+Compiling 2 files (.xrl)
+Compiling 3 files (.erl)
+Compiling 32 files (.ex)
+Generated earmark_parser app
+==> nimble_parsec
+Compiling 4 files (.ex)
+Generated nimble_parsec app
+==> makeup
+Compiling 44 files (.ex)
+Generated makeup app
+==> makeup_elixir
+Compiling 6 files (.ex)
+Generated makeup_elixir app
+==> ex_doc
+Compiling 22 files (.ex)
+Generated ex_doc app
+==> calculadora
+Compiling 1 file (.ex)
+Generated calculadora app
+Generating docs...
+View "html" docs at "doc/index.html"
+View "epub" docs at "doc/calculadora.epub"
+C:\calculadora>
+```
+#### Tests
+```
+C:\calculadora>mix test
+Compiling 1 file (.ex)
+Generated calculadora app
+..
+
+Finished in 0.07 seconds
+1 doctest, 1 test, 0 failures
+
+Randomized with seed 954000
+```
+### Case
+#### Ejemplo 1
+##### Código:
+```elixir
+defmodule Matematicas do
+  def calculadora(opcion,{n1,n2}) do
+    case opcion do
+      "+" -> n1+n2
+      "-" -> n1-n2
+      "/" when n2 != 0 -> n1/n2
+      "/" when n2 == 0 -> "No se puede dividir por 0"
+      "*" -> n1*n2
+      _ -> :error
+    end
+  end
+end
+
+IO.inspect Matematicas.calculadora("+",{12,4})
+IO.inspect Matematicas.calculadora("-",{12,4})
+IO.inspect Matematicas.calculadora("/",{12,4})
+IO.inspect Matematicas.calculadora("/",{12,0})
+IO.inspect Matematicas.calculadora("*",{12,4})
+```
+##### Salida:
+```
+16
+8
+3
+"No se puede dividir por 0"
+20
+48
+```
+### Cond
+#### Ejemplo 1
+##### Código:
+```elixir
+defmodule DiaSemana do
+  def dia(d) do
+    cond do
+      d == 1 -> "Lunes"
+      d == 2 -> "Martes"
+      d == 3 -> "Miercoles"
+      d == 4 -> "Jueves"
+      d == 5 -> "Viernes"
+      d == 6 -> "Sabado"
+      d == 7 -> "Domingo"
+      true -> "Dia no valido"
+    end
+  end
+end
+
+IO.puts DiaSemana.dia(1)
+IO.puts DiaSemana.dia(2)
+IO.puts DiaSemana.dia(3)
+IO.puts DiaSemana.dia(4)
+IO.puts DiaSemana.dia(5)
+IO.puts DiaSemana.dia(6)
+IO.puts DiaSemana.dia(7)
+IO.puts DiaSemana.dia(8)
+```
+##### Salida:
+```
+C:\ola>elixir main.ex
+Lunes
+Martes
+Miercoles
+Jueves
+Viernes
+Sabado
+Domingo
+El dia no es valido
+```
+#### Ejemplo 2
+##### Código:
+```elixir
+defmodule DiaSemana do
+  def dia(d) do
+    cond do
+      d == "l" or d == "L" -> "Lunes"
+      d == "ma" or d == "MA" -> "Martes"
+      d == "mi" or d == "MI" -> "Miercoles"
+      d == "j" or d == "J" -> "Jueves"
+      d == "v" or d == "V" -> "Viernes"
+      d == "s" or d == "S" -> "Sabado"
+      d == "d" or d == "D" -> "Domingo"
+      true -> "Dia no valido"
+    end
+  end
+end
+
+IO.puts DiaSemana.dia("l")
+IO.puts DiaSemana.dia("ma")
+IO.puts DiaSemana.dia("mi")
+IO.puts DiaSemana.dia("j")
+IO.puts DiaSemana.dia("v")
+IO.puts DiaSemana.dia("s")
+IO.puts DiaSemana.dia("d")
+IO.puts DiaSemana.dia("L")
+IO.puts DiaSemana.dia("MA")
+IO.puts DiaSemana.dia("MI")
+IO.puts DiaSemana.dia("J")
+IO.puts DiaSemana.dia("V")
+IO.puts DiaSemana.dia("S")
+IO.puts DiaSemana.dia("D")
+IO.puts DiaSemana.dia("Ma")
+IO.puts DiaSemana.dia("mA")
+```
+##### Salida:
+```
+C:\ola>elixir main.ex
+Lunes
+Martes
+Miercoles
+Jueves
+Viernes
+Sabado
+Domingo
+Lunes
+Martes
+Miercoles
+Jueves
+Viernes
+Sabado
+Domingo
+El dia no es valido
+El dia no es valido
+```
+#### Ejemplo 3
+##### Código:
+```elixir
+defmodule DiaSemana do
+  def dia(d) do
+    d = String.upcase(d)
+     cond do
+       d == "L" -> "Lunes"
+       d == "MA" -> "Martes"
+       d == "MI" -> "Miercoles"
+       d == "J" -> "Jueves"
+       d == "V" -> "Viernes"
+       d == "S" -> "Sabado"
+       d == "D" -> "Domingo"
+       true -> "Dia no valido"
+    end
+  end
+end
+
+IO.puts DiaSemana.dia("l")
+IO.puts DiaSemana.dia("ma")
+IO.puts DiaSemana.dia("mi")
+IO.puts DiaSemana.dia("j")
+IO.puts DiaSemana.dia("v")
+IO.puts DiaSemana.dia("s")
+IO.puts DiaSemana.dia("d")
+
+IO.puts DiaSemana.dia("L")
+IO.puts DiaSemana.dia("MA")
+IO.puts DiaSemana.dia("MI")
+IO.puts DiaSemana.dia("J")
+IO.puts DiaSemana.dia("V")
+IO.puts DiaSemana.dia("S")
+IO.puts DiaSemana.dia("D")
+
+IO.puts DiaSemana.dia("Ma")
+IO.puts DiaSemana.dia("mA")
+```
+##### Salida:
+```
+iC:\ola>elixir main.ex
+Lunes
+Martes
+Miercoles
+Jueves
+Viernes
+Sabado
+Domingo
+Lunes
+Martes
+Miercoles
+Jueves
+Viernes
+Sabado
+Domingo
+Martes
+Martes
+```
+### Unless
+#### Ejemplo 1
+##### Código:
+```elixir
+defmodule MayorDeEdad do
+  def mayor1(edad) do
+    unless edad >= 18 do
+      "Es menor de edad"
+    end
+  end
+end
+```
+##### Salida:
+```
+iex> c("main.ex")
+[MayorDeEdad]
+iex> MayorDeEdad.mayor(16)
+"Es menor de edad"
+iex> MayorDeEdad.mayor1(18)
+nil
+```
+#### Ejemplo 2
+##### Código:
+```elixir
+defmodule MayorDeEdad do
+  def mayor1(edad) do
+    unless edad >= 18 do
+      "Es menor de edad"
+    end
+  end
+  def mayor2(edad) do
+    if edad < 18 do
+      "Es menor de edad"
+    end
+  end
+end
+```
+##### Salida:
+```
+iex> c("main.ex")
+[MayorDeEdad]
+iex> MayorDeEdad.mayor1(16)
+"Es menor de edad"
+iex> MayorDeEdad.mayor2(16)
+"Es menor de edad"
+iex(61)> MayorDeEdad.mayor1(18)
+nil
+iex(62)> MayorDeEdad.mayor2(18)
+nil
+```
+###
