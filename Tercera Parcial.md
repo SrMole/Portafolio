@@ -1694,4 +1694,234 @@ nil
 iex(62)> MayorDeEdad.mayor2(18)
 nil
 ```
-###
+### Funciones anónimas
+#### Ejemplo 1
+##### Código:
+```elixir
+defmodule Calculadora do
+  def suma(n1,n2), do: n1+n2
+end
+suma_anonima = fn(n1,n2) -> n1 + n2 end
+
+IO.puts(Calculadora.suma(5,4))
+IO.puts(suma_anonima.(5,5))
+```
+##### Salida:
+```
+>elixir main.ex
+false
+true
+false
+```
+#### Ejemplo 2
+##### Código:
+```elixir
+mayor? = fn(n1,n2) -> if n1 > n2 do true else false end end
+
+IO.inspect(mayor?.(4,5))
+IO.inspect(mayor?.(5,4))
+IO.inspect(mayor?.(5,5))
+```
+##### Salida:
+```
+>elixir main.exs
+false
+true
+false
+```
+#### Ejemplo salida personalizada
+##### Código:
+```elixir
+mayor? = fn(n1,n2) -> if n1 > n2 do :si else :no end end
+
+IO.inspect(mayor?.(4,5))
+IO.inspect(mayor?.(5,4))
+```
+##### Salida:
+```
+>elixir main.exs
+:no
+:si
+```
+#### Ejemplo 3
+##### Código:
+```elixir
+mayor? = fn(n1,n2) -> if n1 > n2 do :si else :no end end
+res = mayor?.(4,5)
+IO.puts res
+res = mayor?.(5,4)
+IO.puts res
+```
+##### Salida:
+```
+>elixir main.exs
+no
+si
+```
+#### Ejemplo 4
+##### Código:
+```elixir
+mayor = fn(n1,n2) ->
+  if n1 > n2 do
+    {:ok, "#{n1} > #{n2}"}
+  else
+    {:error, "#{n1} <= #{n2}"}
+  end
+end
+
+IO.inspect mayor.(4,5)
+IO.inspect mayor.(5,4)
+IO.inspect mayor.(5,5)
+```
+##### Salida:
+```
+>elixir main.exs
+{:error, "4 <= 5"}
+{:ok, "5 > 4"}
+{:error, "5 <= 5"}
+```
+#### Ejemplo 5
+##### Código:
+```elixir
+mayor = fn(n1,n2) ->
+  if n1 > n2 do
+    {:ok, "#{n1} > #{n2}"}
+  else
+    {:error, "#{n1} <= #{n2}"}
+  end
+end
+
+{status, res} = mayor.(4,5)
+IO.puts status
+IO.puts res
+{status, res} = mayor.(5,4)
+IO.puts status
+IO.puts res
+```
+##### Salida:
+```
+>elixir main.exs
+error
+4 <= 5
+ok
+5 > 4
+```
+### Operador pipe
+#### Dada una lista con n numeros, se desea obtener el cuadrado de la suma de los elementos de la cola. Si la lista es [1,2,3,4,5], el resultado es (2+3+4+5)^2
+##### Código:
+```elixir
+sum = 0
+lista = [1,2,3,4,5]
+lista = tl(lista)
+IO.inspect(lista)
+[num|lista] = lista
+#para sacar el 2
+IO.inspect(num)
+IO.inspect(lista)
+sum = sum + num
+IO.inspect(sum)
+#para sacar el 3
+[num|lista] = lista
+IO.inspect(num)
+IO.inspect(lista)
+sum = sum + num
+IO.inspect(sum)
+#para sacar el 4
+[num|lista] = lista
+IO.inspect(num)
+IO.inspect(lista)
+sum = sum + num
+IO.inspect(sum)
+#para sacar el 5
+[num|lista] = lista
+IO.inspect(num)
+IO.inspect(lista)
+sum = sum + num
+IO.inspect(sum)
+IO.puts("EL resultado es: #{sum*sum}")
+```
+##### Salida:
+```
+>elixir main.ex
+[2, 3, 4, 5]
+2
+[3, 4, 5]
+2
+3
+[4, 5]
+5
+4
+[5]
+9
+5
+[]
+14
+EL resultado es: 196
+```
+#### Solución 1
+##### Código:
+```elixir
+defmodule PipeTest do
+  def cuadrado(n), do: n*n
+  def suma(lista) do
+    Enum.sum(lista)
+  end
+end
+
+IO.puts("#{PipeTest.cuadrado(PipeTest.suma(tl([1,2,3,4,5])))}")
+```
+##### Salida:
+```
+>elixir main.ex
+196
+```
+#### Solución 2
+##### Código:
+```elixir
+defmodule PipeTest do
+  def cuadrado(n), do: n*n
+  def suma(lista) do
+    Enum.sum(lista)
+  end
+  def csc(lista) do
+    lista
+    |> tl
+    |> suma
+    |> cuadrado
+  end
+end
+
+IO.puts("#{PipeTest.csc([1,2,3,4,5])}")
+```
+##### Salida:
+```
+>elixir main.ex
+196
+```
+#### Herramienta de depuración (debugging)
+##### Código:
+```elixir
+**ddefmodule PipeTest do
+  def cuadrado(n), do: n*n
+  def suma(lista) do
+    Enum.sum(lista)
+  end
+  def csc(lista) do
+    lista
+    |> tl
+    |> IO.inspect
+    |> suma
+    |> IO.inspect
+    |> cuadrado
+  end
+end
+
+IO.puts("#{PipeTest.csc([1,2,3,4,5])}")**
+```
+##### Salida:
+```
+>elixir main.ex
+[2, 3, 4, 5]
+14
+196
+```
