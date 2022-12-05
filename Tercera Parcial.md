@@ -4,8 +4,7 @@
 #### Cargar en la terminal el Shell (iex)
 ```
 C:\>iex
-Interactive Elixir (1.10.4) - press Ctrl+C to exit (type h() ENTER for he
-lp)
+Interactive Elixir (1.10.4) - press Ctrl+C to exit (type h() ENTER for help)
 iex()>
 ```
 #### Se pueden realizar expresiones que se evaluarán al presionar
