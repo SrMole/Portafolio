@@ -1,4 +1,4 @@
-# **Ejercicios realizados en clase (Elixir)**
+# **Portafolio de ejercicios realizados en clase (Elixir)**
 ---
 ## Utilización del Shell
 #### Cargar en la terminal el Shell (iex)
